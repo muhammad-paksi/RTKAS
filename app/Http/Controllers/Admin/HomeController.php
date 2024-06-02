@@ -6,9 +6,15 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+        
     public function index()
     {
-        $judul = 'Dashboard';
-        return view('admin.dashboard', ['judul'=>$judul]);
+        $breadcrumb = (object)[
+            'judul' => 'Admin ',
+            'list' => '/ Dashboard'
+        ];
+        $activemenu = 'dashboard';
+
+        return view('admin.dashboard', ['breadcrumb'=>$breadcrumb, 'activemenu' => $activemenu]);
     }
 }

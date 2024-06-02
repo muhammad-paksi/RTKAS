@@ -2,12 +2,22 @@
 
 @section('content')
     
-<div class="col-12 grid-margin stretch-card">
-    <div class="nav-item fw-semibold d-none d-lg-block ms-0">
-        <h3 class="welcome-text">Halo Konnichiwa</h3>
-    </div>
-    <div class="card-body">
-        Selamat datang semua, ini coba-coba
+    <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Halo Konnichiwa</h3>
+                    Selamat datang semua, ini coba-coba
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/b6aeb586-2c69-480f-afa7-f86dda6bab03/page/p_qlabwjaphd" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>                
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

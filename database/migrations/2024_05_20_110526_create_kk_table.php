@@ -14,7 +14,12 @@ return new class extends Migration
         Schema::create('kk', function (Blueprint $table) {
             $table->id('nik_kk');
             $table->string('nama_kepala');
+            $table->text('alamat_kk');
             $table->timestamps();
+            // $table->unsignedBigInteger('id_alamat')->index();
+
+            // $table->foreign('id_alamat')->references('id_alamat')->on('alamat');
+
         });
     }
 

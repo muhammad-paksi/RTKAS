@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('alamat', function (Blueprint $table) {
-            $table->id('id_alamat');
-            $table->unsignedBigInteger('nik_kk')->index();
-            $table->string('detail_alamat');
+        Schema::create('pengumuman', function (Blueprint $table) {
+            $table->id();
+            $table->string('judul_pengumuman', 30);
+            $table->text('isi_pengumuman');
             $table->timestamps();
-
-            $table->foreign('nik_kk')->references('nik_kk')->on('kk');
         });
     }
 
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('alamat');
+        Schema::dropIfExists('pengumuman');
     }
 };

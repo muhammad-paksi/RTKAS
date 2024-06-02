@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="{{ asset('staradmin/assets/css/style.css') }}">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('staradmin/assets/images/favicon.png') }}" />
+    <!-- Icon Material UI -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- End of Icon -->
   </head>
   <body class="with-welcome-text">
     <div class="container-scroller">
@@ -35,13 +38,13 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-          </div>
-          @yield('content')
+            @yield('content')
+          </div> 
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
-        @include('layouts.footer')
           <!-- partial -->
         </div>
+        @include('layouts.footer')
         <!-- main-panel ends -->
       </div>
       <!-- page-body-wrapper ends -->
