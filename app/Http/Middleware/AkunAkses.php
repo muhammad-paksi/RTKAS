@@ -18,8 +18,7 @@ class AkunAkses
         if(auth()->akun()->level == $role)
         {
             return $next($request);
-
         }
-        return response()->json(['Anda tidak diperbolehkan mengakses halaman ini']);
+        return response()->json(['Anda tidak diperbolehkan mengakses halaman ini.']);
     }
 }

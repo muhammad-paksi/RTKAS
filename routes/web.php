@@ -22,23 +22,26 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\AlamatController;
 use App\Http\Controllers\Admin\PendudukController;
 
-    Route::controller(AuthController::class)->group(function (){
-    Route::get('login', 'index')->name('login');
-    Route::post('proses_login', 'proses_login')->name('proses_login');
-    });
-// Route::get('/login', [AuthController::class, 'index'])->name('login');
-// Route::post('/proses_login', [AuthController::class, 'proses_login'])->name('proses_login');
-// Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+// Route::middleware(['guest'])->group(function (){
+//     Route::controller(AuthController::class)->group(function (){
+//         Route::get('login', 'index')->name('login');
+//         Route::post('proses_login', 'proses_login')->name('proses_login');
+//         });
+// });
+    
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::post('/proses_login', [AuthController::class, 'proses_login'])->name('proses_login');
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 // Use Controller Admin
 
 
 
 //====== Admin ======
-// Route::middleware(['auth'])->group(function (){
-// Route::get('dashboard', [HomeController::class, 'index'])->name('home')->middleware('userAkses:admin');
+Route::middleware(['auth'])->group(function (){
 Route::get('dashboard', [HomeController::class, 'index'])->name('home');
-Route::get('tables', [AkunController::class, 'rute'])->name('table');
+// Route::get('dashboard', [HomeController::class, 'index'])->name('home');
+Route::get('tables', [AkunController::class, 'rute'])->name('table')->middleware('akunAkses:warga');
 
 Route::get('/pengumuman', [PengumumanController::class, 'index'])->name('viewpengumuman');
 Route::get('/insertpengumuman', [PengumumanController::class, 'insert'])->name('insertpengumuman');
@@ -61,7 +64,7 @@ Route::get('/insertpenduduk', [PendudukController::class, 'create'])->name('inse
 Route::post('/storependuduk', [PendudukController::class, 'store'])->name('storependuduk');
 Route::get('/editwarga/{nik}', [PendudukController::class, 'edit'])->name('editwarga');
 Route::put('/updatewarga/{nik}', [PendudukController::class, 'update'])->name('updatewarga'); 
-// });
+});
 
 
 

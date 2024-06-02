@@ -37,22 +37,41 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
     
-        $credential = $request->only('username', 'password');
+        $credential = [
+            'username' => $request->username,
+            'password' => $request->password,
+        ];
     
         if (Auth::attempt($credential)) {
-            $user = Auth::user();
-            $redirectRoutes = [
-                'admin' => 'admin',
-                'ketuart' => 'ketuart',
-                'bendahara' => 'bendahara',
-                'warga' => 'warga',
-            ];
-            return redirect()->intended($redirectRoutes[$user->level] ?? '/');
+            if(Auth::user()->level == 'admin')
+            {
+                return redirect('dashboard');
+            }
+            elseif(Auth::user()->level == 'ketuart')
+            {
+                return redirect('dashboard');
+            }
+            elseif(Auth::user()->level == 'bendahara')
+            {
+                return redirect('dashboard');
+            }
+            elseif(Auth::user()->level == 'warga')
+            {
+                return redirect('dashboard');
+            }
+            // $user = Auth::user();
+            // $redirectRoutes = [
+            //     'admin' => 'dashboard',
+            //     'ketuart' => 'ketuart',
+            //     'bendahara' => 'bendahara',
+            //     'warga' => 'warga',
+            // ];
+            // return redirect()->intended($redirectRoutes[$user->level] ?? '/');
         }
     
-        return redirect('login')
-            ->withInput()
-            ->withErrors(['login_gagal' => 'Pastikan kembali username dan password yang dimasukkan benar!']);
+        // return redirect('login')
+        //     ->withInput()
+        //     ->withErrors(['login_gagal' => 'Pastikan kembali username dan password yang dimasukkan benar!']);
     }
     
     public function logout(Request $request)

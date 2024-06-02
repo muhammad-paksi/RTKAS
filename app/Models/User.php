@@ -23,6 +23,8 @@ class User extends Authenticatable
         'level'
     ];
 
+    protected $table = 'akun';
+
     /**
      * The attributes that should be hidden for serialization.
      *
