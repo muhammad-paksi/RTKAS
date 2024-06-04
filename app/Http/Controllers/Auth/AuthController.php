@@ -12,21 +12,6 @@ class AuthController extends Controller
 {
     public function index()
     {
-        // if (Auth::check()) {
-        //     $user = Auth::user();
-
-        //     $redirectRoutes = [
-        //         'admin' => 'admin',
-        //         'ketuart' => 'ketuart',
-        //         'bendahara' => 'bendahara',
-        //         'warga' => 'warga',
-        //     ];
-
-        //     if (array_key_exists($user->level, $redirectRoutes)) {
-        //         return redirect()->intended($redirectRoutes[$user->level]);
-        //     }
-        // }
-
         return view('auth.login');
     }
 
@@ -49,7 +34,7 @@ class AuthController extends Controller
             }
             elseif(Auth::user()->level == 'ketuart')
             {
-                return redirect('dashboard');
+                return redirect('ketuart/dashboard');
             }
             elseif(Auth::user()->level == 'bendahara')
             {
@@ -69,9 +54,9 @@ class AuthController extends Controller
             // return redirect()->intended($redirectRoutes[$user->level] ?? '/');
         }
     
-        // return redirect('login')
-        //     ->withInput()
-        //     ->withErrors(['login_gagal' => 'Pastikan kembali username dan password yang dimasukkan benar!']);
+        return redirect('/login')
+            ->withInput()
+            ->withErrors(['login_gagal' => 'Pastikan kembali username dan password yang dimasukkan benar!']);
     }
     
     public function logout(Request $request)
@@ -79,6 +64,6 @@ class AuthController extends Controller
         $request->session()->flush();
 
         Auth::logout();
-        return redirect('login');
+        return redirect('/login');
     }
 }

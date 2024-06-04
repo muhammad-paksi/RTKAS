@@ -13,9 +13,9 @@ class AkunAkses
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next, $roles): Response
+    public function handle(Request $request, Closure $next, $role): Response
     {
-        if(auth()->akun()->level == $role)
+        if(auth()->user()->level == $role)
         {
             return $next($request);
         }

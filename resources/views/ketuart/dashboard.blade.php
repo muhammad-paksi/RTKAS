@@ -1,4 +1,4 @@
-@extends('admin.layouts.template')
+@extends('ketuart.layouts.template')
 
 @section('content')
     
@@ -6,8 +6,8 @@
         <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="card-title">Halo Konnichiwa</h3>
-                    Selamat datang semua, ini coba-coba
+                    <h3 class="card-title">Selamat datang ketua RT</h3>
+                    ini adalah halaman Dashboard
                 </div>
             </div>
         </div>
