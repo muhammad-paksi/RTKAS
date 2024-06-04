@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Akun;
 use App\Models\Pengurus;
+use App\Models\KartuKeluarga;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,8 +15,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Akun::factory(5)->create();
-        Pengurus::factory(5)->create();
+        // Akun::factory(5)->create();
+        // Pengurus::factory(5)->create();
+        KartuKeluarga::factory(5)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
