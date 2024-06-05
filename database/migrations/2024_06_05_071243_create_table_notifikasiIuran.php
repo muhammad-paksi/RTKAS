@@ -11,15 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transaksi_kas', function (Blueprint $table) {
-            $table->id('id_transaksi');
+        Schema::create('notifikasiIuran', function (Blueprint $table) {
+            $table->id('id_notifikasi');
             $table->unsignedBigInteger('nik_kk')->index();
-            $table->text('bukti');
-            $table->enum('jenis', ['pemasukan', 'pengeluaran'])->change();
-            $table->enum('status', ['proses', 'selesai'])->change();
+            $table->enum('status', ['belum', 'selesai'])->default('belum');
+            $table->unsignedBigInteger('id_iuran')->index();
+            $table->decimal('nominal', 10,2);
             $table->timestamps();
 
             $table->foreign('nik_kk')->references('nik_kk')->on('kk');
+            $table->foreign('id_iuran')->references('id_iuran')->on('iuran');
         });
     }
 
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transaksi_kas');
+        Schema::dropIfExists('notifikasiIuran');
     }
 };

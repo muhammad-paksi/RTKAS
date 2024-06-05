@@ -32,10 +32,6 @@ Route::middleware(['guest'])->group(function (){
         Route::post('proses_login', 'proses_login')->name('proses_login');
         });
 });
-    
-// Route::get('/login', [AuthController::class, 'index'])->name('login');
-// Route::post('/proses_login', [AuthController::class, 'proses_login'])->name('proses_login');
-// Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 // Use Controller Admin
 

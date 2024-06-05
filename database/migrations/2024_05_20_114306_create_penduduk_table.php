@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id('nik');
             $table->string('nama_lengkap');
             $table->date('tanggal_lahir');
-            $table->enum('agama', ['Islam', 'Kristen', 'Katolik', 'Hindu', 'Buddha', 'Konghuchu'])->change();
-            $table->enum('status', ['tetap', 'sementara'])->change();
+            $table->enum('agama', ['Islam', 'Kristen', 'Katolik', 'Hindu', 'Buddha', 'Konghuchu']);
+            $table->enum('status', ['tetap', 'sementara']);
             $table->unsignedBigInteger('nik_kk')->index();
             // $table->unsignedBigInteger('id_alamat')->index();
             $table->timestamps();
