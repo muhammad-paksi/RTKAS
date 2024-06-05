@@ -5,16 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Iuran extends Model
+class NotifikasiIuran extends Model
 {
     use HasFactory;
-
+    protected $primaryKey = 'id_notifikasi';
+    protected $table = 'notifikasiiuran';
+    
     protected $fillable = [
-        'nik_kk',
-        'nama_iuran',
+        'judul',
+        'id_iuran',
         'tanggal',
+        'informasi',
+        'nominal',
     ];
 
-    protected $table = 'iuran';
-    protected $primaryKey = 'id_iuran';
 }

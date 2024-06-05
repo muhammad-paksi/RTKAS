@@ -16,7 +16,7 @@
           <label for="nama_lengkap">Nama Lengkap</label>
           <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap" placeholder="Teks">
         </div>
-        <<div class="form-group">
+        <div class="form-group">
           <label for="tanggal_lahir">Tanggal Lahir</label>
           <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir" placeholder="Teks">
         </div>

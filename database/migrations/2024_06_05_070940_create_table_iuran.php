@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('iuran', function (Blueprint $table) {
             $table->id('id_iuran');
             $table->string('nama_iuran', 50);
+            $table->date('tanggal');
             $table->timestamps();
         });
     }

@@ -17,8 +17,12 @@ return new class extends Migration
             $table->unsignedBigInteger('id_notifikasi')->index();
             $table->text('bukti');
             $table->decimal('nominal', 10,2);
+            $table->unsignedBigInteger('nik_kk')->index();
+            $table->enum('status', ['belum', 'selesai'])->default('belum');
+            $table->date('tanggal_bayar');
             $table->timestamps();
-
+            
+            $table->foreign('nik_kk')->references('nik_kk')->on('kk');
             $table->foreign('nik')->references('nik')->on('penduduk');
             $table->foreign('id_notifikasi')->references('id_notifikasi')->on('notifikasiIuran');
         });

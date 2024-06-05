@@ -17,7 +17,7 @@
           <label for="nama_kepala">Nama Kepala Keluarga</label>
           <input type="text" class="form-control" name="nama_kepala" id="nama_kepala" placeholder="Nama Kepala Keluarga" value="{{ old('nama_kepala', $kartukeluarga->nama_kepala) }}">
         </div>
-        <<div class="form-group">
+        <div class="form-group">
           <label for="alamat_kk">Alamat Kartu Keluarga</label>
           <input type="text" class="form-control" name="alamat_kk" id="alamat_kk" placeholder="Alamat" value="{{ old('alamat_kk', $kartukeluarga->alamat_kk) }}">
         </div>

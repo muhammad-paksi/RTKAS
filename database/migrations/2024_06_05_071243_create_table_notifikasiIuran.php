@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('notifikasiIuran', function (Blueprint $table) {
             $table->id('id_notifikasi');
-            $table->unsignedBigInteger('nik_kk')->index();
-            $table->enum('status', ['belum', 'selesai'])->default('belum');
+            $table->text('judul');
             $table->unsignedBigInteger('id_iuran')->index();
+            $table->date('tanggal');
+            $table->text('informasi')->nullable();
             $table->decimal('nominal', 10,2);
             $table->timestamps();
-
-            $table->foreign('nik_kk')->references('nik_kk')->on('kk');
+            
             $table->foreign('id_iuran')->references('id_iuran')->on('iuran');
         });
     }

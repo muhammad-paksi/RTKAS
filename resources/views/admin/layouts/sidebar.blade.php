@@ -67,10 +67,13 @@
         </a>
         <div class="collapse" id="charts">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{{ asset('staradmin/pages/charts/chartjs.html') }}">Verifikasi iuran</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('viewIuran') }}">Data iuran</a></li>
           </ul>
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{{ asset('staradmin/pages/charts/chartjs.html') }}">Laporan kas</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('viewNotif') }}">Notifikasi Kas</a></li>
+          </ul>
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{ asset('staradmin/pages/charts/chartjs.html') }}">Data Kas</a></li>
           </ul>
         </div>
       </li>
