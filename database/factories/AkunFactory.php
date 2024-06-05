@@ -2,12 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\Penduduk;  // Pastikan model Penduduk diimpor dengan benar
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
+use InvalidArgumentException;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Akun>
- */
 class AkunFactory extends Factory
 {
     /**
@@ -17,10 +16,19 @@ class AkunFactory extends Factory
      */
     public function definition(): array
     {
+        $warga = Penduduk::all()->pluck('nik')->toArray();
+        
+        if (!is_array($warga)) {
+            throw new InvalidArgumentException('Penduduk::all()->pluck("nik") must return an array.');
+        }
+
+        $nik = !empty($warga) ? fake()->randomElement($warga) : null;
+        
         return [
-            'username' => fake()->userName(),
-            'password' => $password ??= Hash::make('password'),
-            'level' => fake()->randomElement(['admin' ,'ketuart', 'warga', 'bendahara']),
+            'username' => 'ravi',
+            'password' => Hash::make('ravi'),
+            'level' => 'admin',
+            'nik' => $nik,
         ];
     }
 }

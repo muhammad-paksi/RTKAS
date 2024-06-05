@@ -14,6 +14,8 @@ class Penduduk extends Model
         'nik',
         'nama_lengkap',
         'tanggal_lahir',
+        'agama',
+        'status',
         'nik_kk',
     ];
     protected $table = 'penduduk';
