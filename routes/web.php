@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainHomeController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Middleware\Cek_Login;
+use App\Http\Controllers\FileUploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,12 @@ Route::get('/', function () {
             Route::post('proses_login', 'proses_login')->name('proses_login');
         });
     });
+//file upload
+    Route::get('/', function(){
+        return view('welcome');
+    });
+    Route::get('/file-upload', [FileUploadController::class,'fileUpload']);
+    Route::post('/file-upload', [FileUploadController::class,'prosesfileUpload']);
     
 // Use Controller Admin
     
@@ -38,6 +45,9 @@ Route::get('/', function () {
     use App\Http\Controllers\Admin\IuranController;
     use App\Http\Controllers\CoprasController;
     use App\Http\Controllers\Admin\NotifikasiIuranController;
+
+    
+    
     
 
 //====== Admin ======
