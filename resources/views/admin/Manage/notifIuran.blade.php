@@ -18,6 +18,7 @@
                       <th>No</th>
                       <th>Judul</th>
                       <th>Nama Iuran</th>
+                      <th>Nominal</th>
                       <th>Tanggal</th>
                       <th>Informasi</th>
                       <th>menu</th>
@@ -29,11 +30,12 @@
                     <tr>
                       <td>{{$loop->iteration }}</td>
                       <td>{{$rs->judul}}</td>
-                      <td>{{$rs->id_iuran}}</td>
+                      <td>{{$rs->iuran->nama_iuran}}</td>
+                      <td>Rp. {{$rs->nominal}}</td>
                       <td>{{$rs->tanggal}}</td>
                       <td>{{$rs->informasi ?? '-'}}</td>
-                      {{-- <td><label class="badge badge-danger"><a btn btn-rounded btn-primary href="{{route('editIuran', $rs->id_iuran)}}" type="button">edit</a></label> 
-                        <label for="badge badge-danger">
+                      <td><label class="badge badge-danger"><a btn btn-rounded btn-primary href="{{route('editNotifikasi', $rs->id_notifikasi)}}" type="button">edit</a></label> 
+                        {{--<label for="badge badge-danger">
                           <form action="{{route('deleteIuran', $rs->id_iuran)}}" method="POST" onsubmit="return confirm('Delete?')">
                             @csrf
                             @method('DELETE')

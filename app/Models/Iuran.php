@@ -10,11 +10,15 @@ class Iuran extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nik_kk',
         'nama_iuran',
         'tanggal',
     ];
 
     protected $table = 'iuran';
     protected $primaryKey = 'id_iuran';
+
+    public function notif()
+    {
+        return $this->hasMany(NotifikasiIuran::class, 'id_iuran', 'id_iuran');
+    }
 }

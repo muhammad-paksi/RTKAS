@@ -14,7 +14,7 @@ class NotifikasiIuranController extends Controller
      */
     public function index()
     {
-        $notifiuran = NotifikasiIuran::all();
+        $notifiuran = NotifikasiIuran::with('iuran')->get();
 
         $breadcrumb = (object)[
             'judul' => 'Admin ',
@@ -68,17 +68,50 @@ class NotifikasiIuranController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(NotifikasiIuran $notifikasiIuran)
+    public function edit(int $id_notifikasi)
     {
-        //
+        $iuran = Iuran::select('id_iuran', 'nama_iuran')->get();
+        if (!preg_match('/^\d+$/', $id_notifikasi)) {
+            // Tambahkan logika untuk menangani kesalahan validasi
+            return redirect()->back()->withErrors(['id_notifikasi' => 'Notifikasi tidak valid.']);
+        }
+        $notif = NotifikasiIuran::findOrFail($id_notifikasi);
+        
+        $breadcrumb = (object)[
+            'judul' => 'Admin / Data Notifikasi Iuran /',
+            'list' => ' Edit Notifikasi'
+        ];
+
+        return view('admin.manage.editNotif', compact('notif', 'breadcrumb', 'iuran'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, NotifikasiIuran $notifikasiIuran)
+    public function update(Request $request, int $id_notifikasi)
     {
-        //
+        if (!preg_match('/^\d+$/', $id_notifikasi)) {
+            // Tambahkan logika untuk menangani kesalahan validasi
+            return redirect()->back()->withErrors(['id_notifikasi' => 'Notifikasi tidak valid.']);
+        }
+    
+        // Validasi input request
+        $validatedData = $request->validate([
+            'judul' => 'required|string',
+            'id_iuran' => 'required|numeric',
+            'nominal' => 'required|numeric', 
+            'informasi' => 'nullable|string', 
+            'tanggal' => 'required|date',
+        ]);
+    
+        // Temukan Kartu Keluarga berdasarkan nik_kk, atau gagal jika tidak ditemukan
+        $notif = NotifikasiIuran::findOrFail($id_notifikasi);
+    
+        // Update data Kartu Keluarga
+        $notif->update($validatedData);
+    
+        // Redirect ke route 'viewkk' dengan pesan sukses
+        return redirect()->route('viewNotif')->with('success', 'Notifikasi Iuran telah diupdate');
     }
 
     /**

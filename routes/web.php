@@ -16,9 +16,9 @@ use App\Http\Middleware\Cek_Login;
 |
 */
 
-// Route::get('/', function () {
-    //     return view('admin.dashboard');
-    // });
+Route::get('/', function () {
+        return view('dashboard');
+    });
     
     Route::middleware(['guest'])->group(function (){
         Route::controller(AuthController::class)->group(function (){
@@ -36,6 +36,7 @@ use App\Http\Middleware\Cek_Login;
     use App\Http\Controllers\Admin\AlamatController;
     use App\Http\Controllers\Admin\PendudukController;
     use App\Http\Controllers\Admin\IuranController;
+    use App\Http\Controllers\CoprasController;
     use App\Http\Controllers\Admin\NotifikasiIuranController;
     
 
@@ -71,6 +72,10 @@ Route::delete('/deleteIuran{id}', [IuranController::class, 'destroy'])->name('de
 Route::get('/viewNotif', [NotifikasiIuranController::class, 'index'])->name('viewNotif')->middleware('akunAkses:admin');
 Route::get('/insertNotifikasi', [NotifikasiIuranController::class, 'create'])->name('insertNotifikasi')->middleware('akunAkses:admin');
 Route::post('/storeNotifikasi', [NotifikasiIuranController::class, 'store'])->name('storeNotifikasi')->middleware('akunAkses:admin');
+Route::get('/editNotifikasi/{id}', [NotifikasiIuranController::class, 'edit'])->name('editNotifikasi')->middleware('akunAkses:admin');
+Route::put('/updateNotifikasi{id}', [NotifikasiIuranController::class, 'update'])->name('updateNotifikasi')->middleware('akunAkses:admin');
+
+
 
 
 Route::get('/logout',[AuthController::class, 'logout'])->name('logout');
@@ -78,8 +83,25 @@ Route::get('/logout',[AuthController::class, 'logout'])->name('logout');
 });
 
 //====== Ketua RT =====
-use App\Http\Controllers\Ketuart\HomeControllerKetua;
-Route::get('ketuart/dashboard', [HomeControllerKetua::class, 'index'])->name('ketuart/dashboard');
+Route::get('/copras', [CoprasController::class, 'index']);
+Route::get('/spk', [CoprasController::class, 'spk']);
+Route::get('/copras/coba', [CoprasController::class, 'coba']);
+
+//Route untuk kriteria SPK
+Route::get('/copras/tambah_kriteria', [CoprasController::class, 'tambah_jumlah_krit']);
+Route::POST('/copras/tambah_kriteria2', [CoprasController::class, 'tambah_krit']);
+Route::POST('/copras/tambah_kriteria2/simpan', [CoprasController::class, 'tambah_krit_simpan']);
+Route::POST('/copras/hapus_kriteria', [CoprasController::class, 'hapus_krit']);
+
+//Route untuk alternatif SPK
+Route::get('/copras/tambah_alt', [CoprasController::class, 'tambah_jumlah_alt']);
+Route::POST('/copras/tambah_alt2', [CoprasController::class, 'tambah_alt']);
+Route::POST('/copras/tambah_alt2/simpan', [CoprasController::class, 'tambah_alt_simpan']);
+Route::POST('/copras/hapus_alternatif', [CoprasController::class, 'hapus_alt']);
+
+//Route untuk edit dan simpan matriks penilaian SPK
+Route::get('/copras/sunting_penilaian', [CoprasController::class, 'sunting_penilaian']);
+Route::POST('/copras/sunting_penilaian/simpan', [CoprasController::class, 'simpan_sunting_penilaian']);
 
 
 

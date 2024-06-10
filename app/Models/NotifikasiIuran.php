@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\Iuran;
 class NotifikasiIuran extends Model
 {
     use HasFactory;
@@ -19,4 +19,8 @@ class NotifikasiIuran extends Model
         'nominal',
     ];
 
+    public function iuran()
+    {
+        return $this->belongsTo(Iuran::class, 'id_iuran', 'id_iuran');
+    }
 }
