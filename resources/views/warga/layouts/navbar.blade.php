@@ -11,10 +11,19 @@
             <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#">Bayar Kas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login">Login</a>
+            <a class="nav-link" href="#">Dana Darurat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pengumuman</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Keluargaku</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logout">Logout</a>
           </li>
         </ul>
       </div>

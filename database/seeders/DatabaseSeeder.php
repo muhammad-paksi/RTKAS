@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
     {
         KartuKeluarga::factory(5)->create();
         Penduduk::factory(5)->create();
-        Akun::factory(1)->create();
+        $this->call([AkunSeeder::class,]);
+        // Akun::factory(1)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

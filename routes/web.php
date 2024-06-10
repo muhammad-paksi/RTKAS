@@ -113,7 +113,15 @@ Route::POST('/copras/hapus_alternatif', [CoprasController::class, 'hapus_alt']);
 Route::get('/copras/sunting_penilaian', [CoprasController::class, 'sunting_penilaian']);
 Route::POST('/copras/sunting_penilaian/simpan', [CoprasController::class, 'simpan_sunting_penilaian']);
 
+//======================= RoutePenduduk =======================
 
+// Use Controller Warga
+use App\Http\Controllers\Warga\HomeWargaController;
+
+Route::middleware(['auth', 'akunAkses:warga'])->group(function (){
+    Route::get('/warga/dashboard', [HomeWargaController::class, 'index'])->name('warga/dashboard');
+
+});
 
 
 

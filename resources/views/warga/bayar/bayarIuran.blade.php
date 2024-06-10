@@ -26,7 +26,7 @@
                 <img src="{{asset('landing/assets/images/icon_mobile_design.svg')}}" alt="branding" class="label-icon-default">
                 <img src="{{asset('landing/assets/images/icon_mobile_design_green.svg')}}" alt="branding" class="label-icon-active">
               </span>
-              <span class="label-text">Moile Design</span>
+              <span class="label-text">Mobile Design</span>
             </label>
            </div>
            <div class="purpose-radio">

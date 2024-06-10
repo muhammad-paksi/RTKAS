@@ -42,7 +42,7 @@ class AuthController extends Controller
             }
             elseif(Auth::user()->level == 'warga')
             {
-                return redirect('dashboard');
+                return redirect('warga/dashboard');
             }
             // $user = Auth::user();
             // $redirectRoutes = [
