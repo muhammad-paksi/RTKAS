@@ -20,10 +20,12 @@
             </div>
             <div>
                 <a class="navbar-brand brand-logo" href="{{ asset('staradmin/index.html') }}">
-                    <img src="staradmin/assets/images/logo.svg" alt="logo" />
+                    <!-- Replace with your application name or logo -->
+                    <span>SI KAS</span>
                 </a>
                 <a class="navbar-brand brand-logo-mini" href="{{ asset('staradmin/index.html') }}">
-                    <img src="staradmin/assets/images/logo-mini.svg" alt="logo" />
+                    <!-- Replace with your application name or logo -->
+                    <span>SI KAS</span>
                 </a>
             </div>
         </div>

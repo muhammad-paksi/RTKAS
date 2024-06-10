@@ -7,7 +7,7 @@
           </div>
           <div>
             <a class="navbar-brand brand-logo" href="{{ asset('staradmin/index.html') }}">
-              <img src="staradmin/assets/images/logo.svg" alt="logo" />
+              <img src="{{ asset('assets/images/LOGO KAS.png') }}" alt="logo" />
             </a>
             <a class="navbar-brand brand-logo-mini" href="{{ asset('staradmin/index.html') }}">
               <img src="staradmin/assets/images/logo-mini.svg" alt="logo" />
