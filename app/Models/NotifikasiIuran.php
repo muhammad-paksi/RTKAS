@@ -23,4 +23,9 @@ class NotifikasiIuran extends Model
     {
         return $this->belongsTo(Iuran::class, 'id_iuran', 'id_iuran');
     }
+
+    public function bayar()
+    {
+        return $this->hasOne(BayarIuran::class, 'id_notifikasi', 'id_notifikasi');
+    }
 }

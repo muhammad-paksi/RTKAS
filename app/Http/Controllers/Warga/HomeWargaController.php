@@ -9,6 +9,6 @@ class HomeWargaController extends Controller
 {
     public function index()
     {
-        return view('warga.dashboardwarga');
+        return view('warga.dashboard');
     }
 }

@@ -52,6 +52,9 @@
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item"> <a class="nav-link" href="{{ asset('/viewpenduduk') }}">Data Warga</a></li>
                     </ul>
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="{{ asset('/viewUser') }}">Data User</a></li>
+                    </ul>
                 </div>
             </li>
             <li class="nav-item">

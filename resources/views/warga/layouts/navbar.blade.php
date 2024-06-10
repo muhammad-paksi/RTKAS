@@ -1,31 +1,31 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-white">
-    <div class="container">
-      <a class="navbar-brand" href="#"><img src="{{asset('landing/assets/images/logo.svg')}}" alt="logo"></a>
-      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavId">
-        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Bayar Kas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Dana Darurat</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pengumuman</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Keluargaku</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="logout">Logout</a>
-          </li>
-        </ul>
-      </div>
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="{{asset('landing/assets/images/logo.svg')}}" alt="logo"></a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('warga/iuran')}}">Bayar Kas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Dana Darurat</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pengumuman</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Keluargaku</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('logout')}}">Logout</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>  

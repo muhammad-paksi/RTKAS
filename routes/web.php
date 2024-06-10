@@ -45,10 +45,9 @@ Route::get('/', function () {
     use App\Http\Controllers\Admin\IuranController;
     use App\Http\Controllers\CoprasController;
     use App\Http\Controllers\Admin\NotifikasiIuranController;
+    use App\Http\Controllers\Admin\UserController;
 
-    
-    
-    
+       
 
 //====== Admin ======
 Route::middleware(['auth'])->group(function (){
@@ -85,6 +84,8 @@ Route::post('/storeNotifikasi', [NotifikasiIuranController::class, 'store'])->na
 Route::get('/editNotifikasi/{id}', [NotifikasiIuranController::class, 'edit'])->name('editNotifikasi')->middleware('akunAkses:admin');
 Route::put('/updateNotifikasi{id}', [NotifikasiIuranController::class, 'update'])->name('updateNotifikasi')->middleware('akunAkses:admin');
 
+Route::get('/viewUser', [UserController::class, 'index'])->name('viewUser')->middleware('akunAkses:admin');
+
 
 
 
@@ -117,9 +118,16 @@ Route::POST('/copras/sunting_penilaian/simpan', [CoprasController::class, 'simpa
 
 // Use Controller Warga
 use App\Http\Controllers\Warga\HomeWargaController;
+use App\Http\Controllers\Warga\Bayar\BayarIuranController;
 
 Route::middleware(['auth', 'akunAkses:warga'])->group(function (){
     Route::get('/warga/dashboard', [HomeWargaController::class, 'index'])->name('warga/dashboard');
+
+
+    Route::get('/warga/iuran', [BayarIuranController::class, 'index'])->name('warga/iuran');
+    Route::get('/warga/bayariuran/{id}', [BayarIuranController::class, 'bayar'])->name('warga.bayariuran');
+    Route::post('warga/bayariuran/store', [BayarIuranController::class, 'store'])->name('bayarIuran.store');
+
 
 });
 

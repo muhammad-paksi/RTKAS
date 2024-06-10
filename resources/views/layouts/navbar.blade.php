@@ -11,7 +11,7 @@
             <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#">keluarga</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="login">Login</a>

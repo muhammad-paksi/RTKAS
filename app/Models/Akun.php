@@ -21,6 +21,7 @@ class Akun extends Authenticatable
         'username',
         'password',
         'level',
+        'nik',
     ];
 
     protected $table = 'akun';
@@ -45,4 +46,9 @@ class Akun extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function penduduk()
+    {
+        return $this->belongsTo(Penduduk::class, 'nik', 'nik');
+    }
 }

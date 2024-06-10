@@ -27,6 +27,5 @@ class Penduduk extends Model
         return $this->belongsTo(KartuKeluarga::class, 'nik_kk', 'nik_kk');
     }
 
-    // Define the relationship with the Alamat model
     
 }
