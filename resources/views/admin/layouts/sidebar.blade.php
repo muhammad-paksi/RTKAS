@@ -6,7 +6,7 @@
     <title>Dokumen</title>
     <style>
         #sidebar {
-            background-color: silver;
+            background-color: rgb(251, 251, 251);
         }
     </style>
 </head>
