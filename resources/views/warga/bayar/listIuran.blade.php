@@ -2,7 +2,7 @@
 
 
 @section('content')
-<div class="container m-5 flex">
+<div class="container  flex">
     <div class=" a">
         <h3>Notifikasi Belum Dibayar</h3>
 <table class="table">

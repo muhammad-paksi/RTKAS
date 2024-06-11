@@ -122,13 +122,22 @@ use App\Http\Controllers\Warga\Bayar\BayarIuranController;
 
 Route::middleware(['auth', 'akunAkses:warga'])->group(function (){
     Route::get('/warga/dashboard', [HomeWargaController::class, 'index'])->name('warga/dashboard');
-
-
+    
+    
     Route::get('/warga/iuran', [BayarIuranController::class, 'index'])->name('warga/iuran');
     Route::get('/warga/bayariuran/{id}', [BayarIuranController::class, 'bayar'])->name('warga.bayariuran');
     Route::post('warga/bayariuran/store', [BayarIuranController::class, 'store'])->name('bayarIuran.store');
+    
+    
+    });
+    
+// ===================== Route Bendahara =========================
 
-
+// Use Controller Bendahara
+use App\Http\Controllers\Bendahara\BendaharaController;
+    
+    Route::middleware(['auth', 'akunAkses:bendahara'])->group(function (){        
+        Route::get('/bendahara/dashboard', [BendaharaController::class, 'index'])->name('bendahara.dashboard');
 });
 
 

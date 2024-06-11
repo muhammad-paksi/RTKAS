@@ -33,7 +33,7 @@ class AkunSeeder extends Seeder
 
         // Membuat akun warga dengan username 'ravi' dan password '123'
         Akun::create([
-            'username' => 'ravi',
+            'username' => 'warga',
             'password' => Hash::make('123'),
             'level' => 'warga',
             'nik' => $warga[1], // Menggunakan NIK kedua dari daftar (pastikan ada setidaknya 2 NIK)

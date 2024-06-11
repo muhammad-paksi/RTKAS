@@ -29,12 +29,12 @@
   <body class="with-welcome-text">
     <div class="container-scroller">
       <!-- Navbar -->
-      @include('bendahara.layoutsbendahara.navbar')
+      @include('bendahara.layouts.navbar')
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
       
       <!-- Sidebar -->
-      @include('bendahara.layoutsbendahara.sidebar')
+      @include('bendahara.layouts.sidebar')
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
@@ -44,7 +44,7 @@
           <!-- partial:../../partials/_footer.html -->
           <!-- partial -->
         </div>
-        @include('bendahara.layoutsbendahara.footer')
+        @include('bendahara.layouts.footer')
         <!-- main-panel ends -->
       </div>
       <!-- page-body-wrapper ends -->

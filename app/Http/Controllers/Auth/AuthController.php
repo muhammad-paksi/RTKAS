@@ -38,7 +38,7 @@ class AuthController extends Controller
             }
             elseif(Auth::user()->level == 'bendahara')
             {
-                return redirect('dashboard');
+                return redirect('bendahara/dashboard');
             }
             elseif(Auth::user()->level == 'warga')
             {
