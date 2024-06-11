@@ -1,4 +1,4 @@
-@extends('layoutscopras.template')
+@extends('admin.layouts.template')
 
 @section('content')
 <div class="content-wrapper">

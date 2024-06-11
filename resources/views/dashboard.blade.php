@@ -72,7 +72,6 @@
         <p class="mb-4"><span id="enteredFirstName">Cha</span> <span id="enteredLastName">Ji-Hun C</span> <br>
             Phone: <span id="enteredPhoneNumber">+230-582-6609</span> <br>
             Email: <span id="enteredEmailAddress">willms_abby@gmail.com</span></p>
-
     </section>
   </div>
 </div>

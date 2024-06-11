@@ -5,6 +5,7 @@ use App\Http\Controllers\MainHomeController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Middleware\Cek_Login;
 use App\Http\Controllers\FileUploadController;
+use App\Http\Controllers\LandingPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,7 @@ use App\Http\Controllers\FileUploadController;
 |
 */
 
-Route::get('/', function () {
-        return view('dashboard');
-    });
+Route::get('/', [LandingPageController::class, 'index'])->name('Landing.Page');
     
     Route::middleware(['guest'])->group(function (){
         Route::controller(AuthController::class)->group(function (){
@@ -46,7 +45,7 @@ Route::get('/', function () {
     use App\Http\Controllers\CoprasController;
     use App\Http\Controllers\Admin\NotifikasiIuranController;
     use App\Http\Controllers\Admin\UserController;
-
+    
        
 
 //====== Admin ======
@@ -87,6 +86,25 @@ Route::put('/updateNotifikasi{id}', [NotifikasiIuranController::class, 'update']
 Route::get('/viewUser', [UserController::class, 'index'])->name('viewUser')->middleware('akunAkses:admin');
 
 
+Route::get('/spk', [CoprasController::class, 'spk'])->middleware('akunAkses:admin');
+Route::get('/copras', [CoprasController::class, 'index'])->name('viewCopras')->middleware('akunAkses:admin');
+Route::get('/copras/coba', [CoprasController::class, 'coba'])->middleware('akunAkses:admin');
+
+//Route untuk kriteria SPK
+Route::get('/copras/tambah_kriteria', [CoprasController::class, 'tambah_jumlah_krit'])->middleware('akunAkses:admin');
+Route::POST('/copras/tambah_kriteria2', [CoprasController::class, 'tambah_krit'])->middleware('akunAkses:admin');
+Route::POST('/copras/tambah_kriteria2/simpan', [CoprasController::class, 'tambah_krit_simpan'])->middleware('akunAkses:admin');
+Route::POST('/copras/hapus_kriteria', [CoprasController::class, 'hapus_krit'])->middleware('akunAkses:admin');
+
+//Route untuk alternatif SPK
+Route::get('/copras/tambah_alt', [CoprasController::class, 'tambah_jumlah_alt'])->middleware('akunAkses:admin');
+Route::POST('/copras/tambah_alt2', [CoprasController::class, 'tambah_alt'])->middleware('akunAkses:admin');
+Route::POST('/copras/tambah_alt2/simpan', [CoprasController::class, 'tambah_alt_simpan'])->middleware('akunAkses:admin');
+Route::POST('/copras/hapus_alternatif', [CoprasController::class, 'hapus_alt'])->middleware('akunAkses:admin');
+
+//Route untuk edit dan simpan matriks penilaian SPK
+Route::get('/copras/sunting_penilaian', [CoprasController::class, 'sunting_penilaian'])->middleware('akunAkses:admin');
+Route::POST('/copras/sunting_penilaian/simpan', [CoprasController::class, 'simpan_sunting_penilaian'])->middleware('akunAkses:admin');
 
 
 Route::get('/logout',[AuthController::class, 'logout'])->name('logout');
@@ -94,25 +112,6 @@ Route::get('/logout',[AuthController::class, 'logout'])->name('logout');
 });
 
 //====== Ketua RT =====
-Route::get('/copras', [CoprasController::class, 'index']);
-Route::get('/spk', [CoprasController::class, 'spk']);
-Route::get('/copras/coba', [CoprasController::class, 'coba']);
-
-//Route untuk kriteria SPK
-Route::get('/copras/tambah_kriteria', [CoprasController::class, 'tambah_jumlah_krit']);
-Route::POST('/copras/tambah_kriteria2', [CoprasController::class, 'tambah_krit']);
-Route::POST('/copras/tambah_kriteria2/simpan', [CoprasController::class, 'tambah_krit_simpan']);
-Route::POST('/copras/hapus_kriteria', [CoprasController::class, 'hapus_krit']);
-
-//Route untuk alternatif SPK
-Route::get('/copras/tambah_alt', [CoprasController::class, 'tambah_jumlah_alt']);
-Route::POST('/copras/tambah_alt2', [CoprasController::class, 'tambah_alt']);
-Route::POST('/copras/tambah_alt2/simpan', [CoprasController::class, 'tambah_alt_simpan']);
-Route::POST('/copras/hapus_alternatif', [CoprasController::class, 'hapus_alt']);
-
-//Route untuk edit dan simpan matriks penilaian SPK
-Route::get('/copras/sunting_penilaian', [CoprasController::class, 'sunting_penilaian']);
-Route::POST('/copras/sunting_penilaian/simpan', [CoprasController::class, 'simpan_sunting_penilaian']);
 
 //======================= RoutePenduduk =======================
 

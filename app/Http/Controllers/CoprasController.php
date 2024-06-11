@@ -208,9 +208,14 @@ class CoprasController extends Controller
             hitungIndexPerforma($nilaiPrioritas, $indexPerforma);
             hitungPeringkat($nilaiPrioritas, $peringkat);
        
+            $breadcrumb = (object)[
+                'judul' => 'Admin ',
+                'list' => '/ Sistem Pendukung Keputusan'
+            ];
+    
         return view('layoutscopras.copras', compact(
             'penilaian', 'kriteria', 'normalisasi', 'normalBobot', 'benefit', 'cost', 'botRelatif1',
-            'botRelatif2', 'nilaiPrioritas', 'indexPerforma', 'peringkat', 'alternatif'
+            'botRelatif2', 'nilaiPrioritas', 'indexPerforma', 'peringkat', 'alternatif', 'breadcrumb'
         ));
     }
 

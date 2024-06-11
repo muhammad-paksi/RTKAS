@@ -1,5 +1,5 @@
 
-@extends('layoutscopras.template')
+@extends('admin.layouts.template')
 
 @section('content')
     <!-- Source of table: https://bbbootstrap.com/snippets/team-points-table-61285186# -->
@@ -300,8 +300,8 @@
                     </div>
                 </div>
             <!-- </section> -->
-        </div>
-    </div>
+        
+    
         </div>
     </div>
 @endsection

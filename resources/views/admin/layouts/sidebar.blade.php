@@ -82,9 +82,9 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="{{ asset('staradmin/docs/documentation.html') }}" aria-expanded="false" aria-controls="tables">
+                <a class="nav-link" data-bs-toggle="collapse" href="{{ route('viewCopras') }}" aria-expanded="false" aria-controls="tables">
                     <i class="menu-icon mdi material-symbols-outlined">experiment</i>
-                    <span class="menu-title">Halaman<br>percobaan</span>
+                    <span class="menu-title">Sistem Pendukung Keputusan</span>
                 </a>
             </li>
         </ul>
