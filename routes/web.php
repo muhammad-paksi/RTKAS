@@ -122,6 +122,7 @@ Route::get('/logout',[AuthController::class, 'logout'])->name('logout');
 // Use Controller Warga
 use App\Http\Controllers\Warga\HomeWargaController;
 use App\Http\Controllers\Warga\Bayar\BayarIuranController;
+use App\Http\Controllers\Warga\Keluarga\KeluargakuController;
 
 Route::middleware(['auth', 'akunAkses:warga'])->group(function (){
     Route::get('/warga/dashboard', [HomeWargaController::class, 'index'])->name('warga/dashboard');
@@ -131,6 +132,7 @@ Route::middleware(['auth', 'akunAkses:warga'])->group(function (){
     Route::get('/warga/bayariuran/{id}', [BayarIuranController::class, 'bayar'])->name('warga.bayariuran');
     Route::post('warga/bayariuran/store', [BayarIuranController::class, 'store'])->name('bayarIuran.store');
     
+    Route::get('/warga/keluarga', [KeluargakuController::class, 'index'])->name('warga.keluargaku');
     
     });
     
@@ -141,12 +143,47 @@ use App\Http\Controllers\Bendahara\BendaharaController;
 use App\Http\Controllers\Bendahara\Manage\KasController;
 use App\Http\Controllers\Bendahara\Manage\VerifikasiKasController;
     
-    Route::middleware(['auth', 'akunAkses:bendahara'])->group(function (){        
-        Route::get('/bendahara/dashboard', [BendaharaController::class, 'index'])->name('bendahara.dashboard');
-        Route::get('/bendahara/kas', [KasController::class, 'totalNominal'])->name('bendahara.kas');
-        Route::get('/bendahara/verifikasikas', [VerifikasiKasController::class, 'index'])->name('bendahara.verifikasi.kas');
-        Route::get('/bendahara/verifikasikas/detail/{id}', [VerifikasiKasController::class, 'showDetail'])->name('bendahara.verifikasi.detailkas');
-        Route::post('/bendahara/updatestatus/{id}', [VerifikasiKasController::class, 'updateStatus'])->name('bendahara.updateStatus');
+Route::middleware(['auth', 'akunAkses:bendahara'])->group(function (){        
+    Route::get('/bendahara/dashboard', [BendaharaController::class, 'index'])->name('bendahara.dashboard');
+    Route::get('/bendahara/kas', [KasController::class, 'totalNominal'])->name('bendahara.kas');
+    Route::get('/bendahara/verifikasikas', [VerifikasiKasController::class, 'index'])->name('bendahara.verifikasi.kas');
+    Route::get('/bendahara/verifikasikas/detail/{id}', [VerifikasiKasController::class, 'showDetail'])->name('bendahara.verifikasi.detailkas');
+    Route::post('/bendahara/updatestatus/{id}', [VerifikasiKasController::class, 'updateStatus'])->name('bendahara.updateStatus');
+});
+
+// ==================== Route Ketua RT ===========================
+
+//Use Controller Ketua RT
+use App\Http\Controllers\Ketua\HomeControllerKetua;
+use App\Http\Controllers\Ketua\Manage\PendudukRTController;
+use App\Http\Controllers\Ketua\Manage\KartuKlgRTController;
+use App\Http\Controllers\Ketua\Manage\IuranRTController;
+
+
+Route::middleware(['auth', 'akunAkses:ketuart'])->group(function (){        
+    Route::get('/ketua/dashboard', [HomeControllerKetua::class, 'index'])->name('ketua.dashboard');
+    
+    Route::get('/ketua/penduduk', [PendudukRTController::class, 'index'])->name('ketua.penduduk');
+    Route::get('/ketua/penduduk/insert', [PendudukRTController::class, 'create'])->name('ketua.insert.penduduk');
+    Route::post('/ketua/penduduk/store', [PendudukRTController::class, 'store'])->name('ketua.store.penduduk');
+    Route::get('/ketua/penduduk/edit/{id}', [PendudukRTController::class, 'edit'])->name('ketua.edit.penduduk');
+    Route::put('/ketua/penduduk/update/{id}', [PendudukRTController::class, 'update'])->name('ketua.update.penduduk');
+    Route::delete('/ketua/penduduk/delete/{id}', [PendudukRTController::class, 'destroy'])->name('ketua.delete.penduduk');
+    
+    Route::get('/ketua/kartukeluarga', [KartuKlgRTController::class, 'index'])->name('ketua.kartukeluarga');
+    Route::get('/ketua/kartukeluarga/insert', [KartuKlgRTController::class, 'create'])->name('ketua.insert.kartukeluarga');
+    Route::post('/ketua/kartukeluarga/store', [KartuKlgRTController::class, 'store'])->name('ketua.store.kartukeluarga');
+    Route::get('/ketua/kartukeluarga/edit/{id}', [KartuKlgRTController::class, 'edit'])->name('ketua.edit.kartukeluarga');
+    Route::put('/ketua/kartukeluarga/update/{id}', [KartuKlgRTController::class, 'update'])->name('ketua.update.kartukeluarga');
+    Route::delete('/ketua/kartukeluarga/delete/{id}', [KartuKlgRTController::class, 'destroy'])->name('ketua.delete.kartukeluarga');
+    
+    Route::get('/ketua/iuran', [IuranRTController::class, 'index'])->name('ketua.iuran');
+    Route::get('/ketua/insert/iuran', [IuranRTController::class, 'create'])->name('ketua.insert.iuran');
+    Route::post('/ketua/store/iuran', [IuranRTController::class, 'store'])->name('ketua.store.iuran');
+    Route::get('/ketua/edit/iuran/{id}', [IuranRTController::class, 'edit'])->name('ketua.edit.iuran');
+    Route::put('/ketua/update/iuran/{id}', [IuranRTController::class, 'update'])->name('ketua.update.iuran');
+    
+
 });
 
 

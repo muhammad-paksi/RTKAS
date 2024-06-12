@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Ketua\Manage;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Pengumuman;
 use Illuminate\Support\Facades\Storage;
 
-class PengumumanController extends Controller
+class PengumumanRTController extends Controller
 {
     /**
      * Handle the incoming request.

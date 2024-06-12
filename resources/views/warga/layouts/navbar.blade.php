@@ -20,7 +20,7 @@
           <a class="nav-link" href="#">Pengumuman</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Keluargaku</a>
+          <a class="nav-link" href="{{route('warga.keluargaku')}}">Keluargaku</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{route('logout')}}">Logout</a>

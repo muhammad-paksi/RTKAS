@@ -18,7 +18,7 @@ class VerifikasiKasController extends Controller
             'list' => '/ Verifikasi Kas'
             ];
         $list = BayarIuran::with('notif', 'warga')->where('status', 'belum')->get();      
-        $listsudah = BayarIuran::with('notif', 'warga')->where('status', 'sudah')->get();
+        $listsudah = BayarIuran::with('notif', 'warga')->where('status', 'selesai')->get();
         return view('bendahara.manage.viewbayar', compact('list', 'listsudah', 'breadcrumb'));
 
     }

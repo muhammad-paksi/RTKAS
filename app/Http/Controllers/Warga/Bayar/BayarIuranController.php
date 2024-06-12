@@ -24,13 +24,16 @@ class BayarIuranController extends Controller
             $query->where('nik_kk', $nik_kk);
         })->get();
 
-        // Notifikasi yang sudah dibayar (pending)
-        $notifikasi_pending = BayarIuran::where('nik_kk', $nik_kk)->where('status', 'belum')->get();
-
-        return view('warga.bayar.listIuran', compact('notifikasi_belum_dibayar', 'notifikasi_pending'));
-    }
-
-    /**
+        $notifikasi_pending = NotifikasiIuran::whereHas('bayar', function($query) use ($nik_kk) {
+            $query->where('nik_kk', $nik_kk);
+            })->get();
+            
+            return view('warga.bayar.listIuran', compact('notifikasi_belum_dibayar', 'notifikasi_pending'));
+            }
+            
+            // Notifikasi yang sudah dibayar (pending)
+            // $notifikasi_pending = BayarIuran::where('nik_kk', $nik_kk)->where('status', 'belum')->orWhere('status', 'selesai')->get();
+            /**
      * Show the form for creating a new resource.
      */
     public function bayar(int $id_notifikasi)
