@@ -29,12 +29,12 @@
   <body class="with-welcome-text">
     <div class="container-scroller">
       <!-- Navbar -->
-      @include('ketuart.layouts.navbar')
+      @include('ketua.layouts.navbar')
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
       
       <!-- Sidebar -->
-      @include('ketuart.layouts.sidebar')
+      @include('ketua.layouts.sidebar')
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
@@ -44,7 +44,7 @@
           <!-- partial:../../partials/_footer.html -->
           <!-- partial -->
         </div>
-        @include('ketuart.layouts.footer')
+        @include('ketua.layouts.footer')
         <!-- main-panel ends -->
       </div>
       <!-- page-body-wrapper ends -->

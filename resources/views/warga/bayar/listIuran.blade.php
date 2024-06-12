@@ -46,17 +46,17 @@
                     <th>Judul</th>
                     <th>Tanggal</th>
                     <th>Nominal</th>
-                    <th>Status</th>
+                    {{-- <th>Status</th> --}}
                 </tr>
             </thead>
             <tbody>
                 @foreach($notifikasi_pending as $notif)
                     <tr>
-                        <td>{{ $notif->notif->id_notifikasi }}</td>
-                        <td>{{ $notif->notif->judul }}</td>
-                        <td>{{ $notif->notif->tanggal }}</td>
+                        <td>{{ $notif->id_notifikasi }}</td>
+                        <td>{{ $notif->judul }}</td>
+                        <td>{{ $notif->tanggal }}</td>
                         <td>{{ $notif->nominal }}</td>
-                        <td>{{ $notif->status }}</td>
+                        {{-- <td>{{ $notif->bayar->status }}</td> --}}
                     </tr>
                 @endforeach
             </tbody>

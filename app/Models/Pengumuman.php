@@ -12,7 +12,9 @@ class Pengumuman extends Model
     protected $fillable = [
         'judul_pengumuman',
         'isi_pengumuman',
+        'gambar_pengumuman',
     ];
     protected $table = 'pengumuman';
+    protected $primaryKey = 'id';
 
 }

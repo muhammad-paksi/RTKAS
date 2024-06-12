@@ -1,4 +1,4 @@
-@extends('ketuart.layouts.template')
+@extends('ketua.layouts.template')
 
 @section('content')
     

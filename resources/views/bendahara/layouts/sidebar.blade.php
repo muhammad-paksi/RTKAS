@@ -16,13 +16,13 @@
             </a>
           </li>
           <li class="nav-item nav-category">Informasi</li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
               <i class="menu-icon mdi material-symbols-outlined">e911_emergency</i>
               <span class="menu-title">Dana darurat</span>
               <!-- <i class="menu-arrow"></i> -->
             </a>
-          </li>
+          </li> --}}
           <li class="nav-item">
             <a class="nav-link" href="{{ route('bendahara.verifikasi.kas')}}" aria-expanded="false" >
               <i class="menu-icon mdi material-symbols-outlined">account_balance</i>
@@ -50,22 +50,20 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link"  href="{{url('/pengumuman')}}">
               <i class="menu-icon mdi material-symbols-outlined">newsstand</i>
               <span class="menu-title">Pengumuman</span>
               <!-- <i class="menu-arrow"></i> -->
-            </a>
-            
-          </li>
-          <li class="nav-item">
+            </a>  
+          </li> --}}
+          {{-- <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="{{ asset('staradmin/docs/documentation.html') }}" aria-expanded="false" aria-controls="tables">
               <i class="menu-icon mdi material-symbols-outlined">experiment</i>
               <span class="menu-title">Halaman<br>percobaan</span>
               <!-- <i class="menu-arrow"></i> -->
             </a>
-            
-          </li>
+          </li> --}}
           
         </ul>
       </nav>

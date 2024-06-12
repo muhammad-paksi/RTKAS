@@ -1,4 +1,4 @@
-@extends('admin.layouts.template')
+@extends('ketua.layouts.template')
 
 @section('content')
       <div class="row">
@@ -7,8 +7,8 @@
             <div class="card-body">
               <h4 class="card-title">Table</h4>
               <div class="card-description">
-              <a class="btn btn-rounded btn-primary float-end" href="{{url('/insertpengumuman')}}">Tambah Data</a>
-              <p > Data Pengumuman
+              <a class="btn btn-rounded btn-primary float-end" href="{{ route('ketua.insert.iuran')}}">Tambah Data</a>
+              <p> Data Iuran
             </p>
               </div>
               <div class="table-responsive">
@@ -16,27 +16,27 @@
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Judul Pengumuman</th>
-                      <th>Isi Pengumuman</th>
+                      <th>Nama Iuran</th>
                       <th>Tanggal</th>
                       <th>menu</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @if($pengumuman->count() > 0)
-                    @foreach($pengumuman as $rs)
+                    @if($iuran->count() > 0)
+                    @foreach($iuran as $rs)
                     <tr>
-                      <td>{{ $loop->iteration }}</td>
-                      <td>{{$rs->judul_pengumuman}}</td>
-                      <td>{{$rs->isi_pengumuman}}</td>
-                      <td>{{$rs->created_at}}</td>
-                      <td>
-                        @if($rs->gambar_pengumuman)
-                        <p>Gambar</p>
-                        <img src="{{ asset('storage/gambar/' . $rs->gambar_pengumuman) }}" alt="Gambar Pengumuman" style="max-width: 50%;">
-                        @endif
+                      <td>{{$loop->iteration }}</td>
+                      <td>{{$rs->nama_iuran}}</td>
+                      <td>{{$rs->tanggal}}</td>
+                      <td><label class="badge badge-danger"><a btn btn-rounded btn-primary href="{{route('ketua.edit.iuran', $rs->id_iuran)}}" type="button">edit</a></label> 
+                        <label for="badge badge-danger">
+                          <form action="{{route('deleteIuran', $rs->id_iuran)}}" method="POST" onsubmit="return confirm('Delete?')">
+                            @csrf
+                            @method('DELETE')
+                            <button>Delete</button>
+                          </form>
+                        </label>
                       </td>
-                      <td><label class="badge badge-danger">edit</label> <label class="badge badge-danger">delete</label></td>
                     </tr>
                     @endforeach
                     @else

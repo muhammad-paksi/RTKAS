@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Ketuart;
+namespace App\Http\Controllers\Ketua;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,6 +14,6 @@ class HomeControllerKetua extends Controller
             'list' => '/ Dashboard'
         ];
 
-        return view('ketuart.dashboard', compact('breadcrumb'));
+        return view('ketua.dashboard', compact('breadcrumb'));
     }
 }

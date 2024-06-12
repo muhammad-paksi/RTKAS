@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('judul_pengumuman', 30);
             $table->text('isi_pengumuman');
+            $table->text('gambar_pengumuman');
             $table->timestamps();
         });
     }
