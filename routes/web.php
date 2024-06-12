@@ -102,6 +102,8 @@ Route::POST('/copras/hapus_kriteria', [CoprasController::class, 'hapus_krit'])->
 Route::get('/copras/tambah_alt', [CoprasController::class, 'tambah_jumlah_alt'])->middleware('akunAkses:admin');
 Route::POST('/copras/tambah_alt2', [CoprasController::class, 'tambah_alt'])->middleware('akunAkses:admin');
 Route::POST('/copras/tambah_alt2/simpan', [CoprasController::class, 'tambah_alt_simpan'])->middleware('akunAkses:admin');
+Route::get('/copras/sunting_alt', [CoprasController::class, 'sunting_alt']);
+Route::POST('/copras/sunting_alt/simpan', [CoprasController::class, 'simpan_sunting_alt']);
 Route::POST('/copras/hapus_alternatif', [CoprasController::class, 'hapus_alt'])->middleware('akunAkses:admin');
 
 //Route untuk edit dan simpan matriks penilaian SPK
