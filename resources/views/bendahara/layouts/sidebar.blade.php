@@ -9,7 +9,7 @@
             </a>
           </li> -->
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/dashboard') }}">
+            <a class="nav-link" href="{{ url('/bendahara/dashboard') }}">
               <!-- <i class="menu-icon mdi mdi-file-document"></i> -->
               <i class="menu-icon mdi material-symbols-outlined">home</i>
               <span class="menu-title">Dashboard</span>
@@ -24,9 +24,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+            <a class="nav-link" href="{{ route('bendahara.verifikasi.kas')}}" aria-expanded="false" >
               <i class="menu-icon mdi material-symbols-outlined">account_balance</i>
-              <span class="menu-title">Iuran</span>
+              <span class="menu-title">Verifikasi Kas</span>
               <!-- <i class="menu-arrow"></i> -->
             </a>
             
@@ -46,7 +46,7 @@
                 <li class="nav-item"> <a class="nav-link" href="{{ route('viewNotif') }}">Notifikasi Kas</a></li>
               </ul>
               <ul class="nav flex-column sub-menu">
-                {{-- <li class="nav-item"> <a class="nav-link" href="{{ route('bendahara.viewkas') }}">Data Kas</a></li> --}}
+                <li class="nav-item"> <a class="nav-link" href="{{ route('bendahara.kas') }}">Data Kas</a></li>
               </ul>
             </div>
           </li>

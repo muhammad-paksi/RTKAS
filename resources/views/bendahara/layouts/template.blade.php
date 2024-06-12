@@ -39,7 +39,8 @@
         <div class="main-panel">
           <div class="content-wrapper">
             @yield('content')
-          </div> 
+          </div>
+          
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
           <!-- partial -->

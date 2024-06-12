@@ -213,7 +213,7 @@ class CoprasController extends Controller
                 'list' => '/ Sistem Pendukung Keputusan'
             ];
     
-        return view('layoutscopras.copras', compact(
+        return view('layouts.copras.copras', compact(
             'penilaian', 'kriteria', 'normalisasi', 'normalBobot', 'benefit', 'cost', 'botRelatif1',
             'botRelatif2', 'nilaiPrioritas', 'indexPerforma', 'peringkat', 'alternatif', 'breadcrumb'
         ));
