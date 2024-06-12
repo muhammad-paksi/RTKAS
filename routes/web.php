@@ -138,9 +138,15 @@ Route::middleware(['auth', 'akunAkses:warga'])->group(function (){
 
 // Use Controller Bendahara
 use App\Http\Controllers\Bendahara\BendaharaController;
+use App\Http\Controllers\Bendahara\Manage\KasController;
+use App\Http\Controllers\Bendahara\Manage\VerifikasiKasController;
     
     Route::middleware(['auth', 'akunAkses:bendahara'])->group(function (){        
         Route::get('/bendahara/dashboard', [BendaharaController::class, 'index'])->name('bendahara.dashboard');
+        Route::get('/bendahara/kas', [KasController::class, 'totalNominal'])->name('bendahara.kas');
+        Route::get('/bendahara/verifikasikas', [VerifikasiKasController::class, 'index'])->name('bendahara.verifikasi.kas');
+        Route::get('/bendahara/verifikasikas/detail/{id}', [VerifikasiKasController::class, 'showDetail'])->name('bendahara.verifikasi.detailkas');
+        Route::post('/bendahara/updatestatus/{id}', [VerifikasiKasController::class, 'updateStatus'])->name('bendahara.updateStatus');
 });
 
 

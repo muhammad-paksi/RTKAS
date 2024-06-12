@@ -26,7 +26,7 @@
             display: flex;
         }
         .image-container {
-            background-image: url('{{ asset('storage/web-1717985338.jpeg') }}');
+            background-image: url('{{ asset('storage/web-1718164149.png') }}');
             background-size: cover;
             background-position: center;
             width: 50%;

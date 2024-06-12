@@ -6,8 +6,8 @@
         <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="card-title">Halo Admin</h3>
-                    Selamat datang di Dashboard Admin
+                    <h3 class="card-title">Halo Bendahara</h3>
+                    Selamat datang di Dashboard Bendahara
                 </div>
             </div>
         </div>
@@ -19,5 +19,5 @@
             </div>
         </div>
     </div>
-</div>
+
 @endsection

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use InvalidArgumentException;
 
+
 class AkunFactory extends Factory
 {
     /**
@@ -17,6 +18,7 @@ class AkunFactory extends Factory
     public function definition(): array
     {
         $warga = Penduduk::all()->pluck('nik')->toArray();
+        
         
         if (!is_array($warga)) {
             throw new InvalidArgumentException('Penduduk::all()->pluck("nik") must return an array.');

@@ -20,7 +20,7 @@ class FileUploadController extends Controller
     {
         // Validasi file yang diupload
         $request->validate([
-            'berkas' => 'required|file|image|max:500', 
+            'berkas' => 'required|file|image|max:10000', 
         ]);
 
         // Ambil ekstensi file asli
