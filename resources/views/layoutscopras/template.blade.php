@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Spk Copras</title>
+    <title>Copras - RTKAS</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('staradmin/assets/vendors/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('staradmin/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
