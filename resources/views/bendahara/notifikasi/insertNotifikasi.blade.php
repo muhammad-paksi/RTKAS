@@ -1,4 +1,4 @@
-@extends('admin.layouts.template')
+@extends('bendahara.layouts.template')
 
 @section('content')
         <div class="row">
@@ -6,7 +6,7 @@
     <div class="card-body">
       <h4 class="card-title">Default form</h4>
       <p class="card-description"> Basic form layout </p>
-      <form class="forms-sample" action="{{route('storeNotifikasi')}}" method="POST">
+      <form class="forms-sample" action="{{route('bendahara.notifikasi.store')}}" method="POST">
         @csrf
         <div class="form-group">
           <label for="judul">Judul Notifikasi</label>

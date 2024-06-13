@@ -21,6 +21,7 @@ class User extends Authenticatable
         'username',
         'password',
         'level',
+        'nik,'
     ];
 
     protected $table = 'akun';

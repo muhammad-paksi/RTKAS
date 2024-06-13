@@ -7,7 +7,6 @@
             <div class="card-body">
               <h4 class="card-title">Table</h4>
               <div class="card-description">
-              <a class="btn btn-rounded btn-primary float-end" href="{{url('/insertkk')}}">Tambah Data</a>
               <h5>Belum Dikonfirmasi</h5>
               </div>
               <div class="table-responsive">

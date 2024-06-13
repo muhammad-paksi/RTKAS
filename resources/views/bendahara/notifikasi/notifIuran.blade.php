@@ -1,4 +1,4 @@
-@extends('admin.layouts.template')
+@extends('bendahara.layouts.template')
 
 @section('content')
       <div class="row">
@@ -7,7 +7,7 @@
             <div class="card-body">
               <h4 class="card-title">Table</h4>
               <div class="card-description">
-              <a class="btn btn-rounded btn-primary float-end" href="{{url('/insertNotifikasi')}}">Tambah Data</a>
+              <a class="btn btn-rounded btn-primary float-end" href="{{route('bendahara.notifikasi.insert')}}">Tambah Data</a>
               <p > Data Notifikasi Iuran
             </p>
               </div>
@@ -34,15 +34,15 @@
                       <td>Rp. {{$rs->nominal}}</td>
                       <td>{{$rs->tanggal}}</td>
                       <td>{{$rs->informasi ?? '-'}}</td>
-                      <td><label class="badge badge-danger"><a btn btn-rounded btn-primary href="{{route('editNotifikasi', $rs->id_notifikasi)}}" type="button">edit</a></label> 
-                        {{--<label for="badge badge-danger">
-                          <form action="{{route('deleteIuran', $rs->id_iuran)}}" method="POST" onsubmit="return confirm('Delete?')">
+                      <td><label class="badge badge-danger"><a btn btn-rounded btn-primary href="{{route('bendahara.notifikasi.edit', $rs->id_notifikasi)}}" type="button">edit</a></label> 
+                        {{-- <label for="badge badge-danger">
+                          <form action="{{route('bendahara.notifikasi.delete', $rs->id_notifikasi)}}" method="POST" onsubmit="return confirm('Delete?')">
                             @csrf
                             @method('DELETE')
                             <button>Delete</button>
                           </form>
-                        </label>
-                      </td> --}}
+                        </label> --}}
+                      </td>
                     </tr>
                     @endforeach
                     @else

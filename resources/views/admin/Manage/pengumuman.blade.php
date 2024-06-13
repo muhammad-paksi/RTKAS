@@ -37,7 +37,15 @@
                         <img src="{{ asset('storage/pengumuman/' . $rs->gambar) }}" alt="Gambar Pengumuman" style="max-width: 50%;">
                         @endif
                       </td>
-                      <td><label class="badge badge-danger">edit</label> <label class="badge badge-danger">delete</label></td>
+                      <td><label class="badge badge-warning">edit</label> 
+                        <label for="badge badge-danger">
+                          <form action="{{route('delete.pengumuman', $rs->id)}}" method="POST" onsubmit="return confirm('Delete?')">
+                            @csrf
+                            @method('DELETE')
+                            <button>Delete</button>
+                          </form>
+                        </label>
+                      </td>
                     </tr>
                     @endforeach
                     @else

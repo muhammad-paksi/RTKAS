@@ -47,8 +47,9 @@ class BayarIuranController extends Controller
         // Dapatkan data penduduk yang terkait dengan akun
         $penduduk = Penduduk::where('nik', $nik)->firstOrFail();
         $nik_kk = $penduduk->nik_kk;
+        $nominal = $notifikasi->nominal;
 
-        return view('warga.bayar.bayarIuran', compact('id_notifikasi', 'nik', 'nik_kk'));
+        return view('warga.bayar.bayarIuran', compact('id_notifikasi', 'nik', 'nominal', 'nik_kk'));
     }
 
     /**

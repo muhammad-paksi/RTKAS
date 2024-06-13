@@ -61,6 +61,7 @@ Route::get('tables', [AkunController::class, 'rute'])->name('table')->middleware
 Route::get('/pengumuman', [PengumumanController::class, 'index'])->name('viewpengumuman')->middleware('akunAkses:admin');
 Route::get('/insertpengumuman', [PengumumanController::class, 'insert'])->name('insertpengumuman')->middleware('akunAkses:admin');
 Route::post('/storepengumuman', [PengumumanController::class, 'store'])->name('storepengumuman')->middleware('akunAkses:admin');
+Route::delete('/deletepengumuman/{id}', [PengumumanController::class, 'destroy'])->name('delete.pengumuman')->middleware('akunAkses:admin');
 
 Route::get('/kartukeluarga', [KartuKlgController::class, 'index'])->name('viewkk')->middleware('akunAkses:admin');
 Route::get('/insertkk', [KartuKlgController::class, 'create'])->name('insertkk')->middleware('akunAkses:admin');
@@ -159,6 +160,8 @@ use App\Http\Controllers\Bendahara\BendaharaController;
 use App\Http\Controllers\Bendahara\Manage\KasController;
 use App\Http\Controllers\Bendahara\Manage\VerifikasiKasController;
 use App\Http\Controllers\Bendahara\Manage\IuranBendaharaController;
+use App\Http\Controllers\Bendahara\Manage\NotifikasiBendaharaIuranController;
+
 
     
 Route::middleware(['auth', 'akunAkses:bendahara'])->group(function (){        
@@ -175,6 +178,14 @@ Route::middleware(['auth', 'akunAkses:bendahara'])->group(function (){
     Route::get('/bendahara/iuran/edit/{id}', [IuranBendaharaController::class, 'edit'])->name('bendahara.iuran.edit');
     Route::put('/bendahara/iuran/update/{id}', [IuranBendaharaController::class, 'update'])->name('bendahara.iuran.update');
     Route::delete('/bendahara/iuran/delete/{id}', [IuranBendaharaController::class, 'destroy'])->name('bendahara.iuran.delete');
+    
+    Route::get('/bendahara/notifikasi', [NotifikasiBendaharaIuranController::class, 'index'])->name('bendahara.notifikasi');
+    Route::get('/bendahara/notifikasi/insert', [NotifikasiBendaharaIuranController::class, 'create'])->name('bendahara.notifikasi.insert');
+    Route::post('/bendahara/notifikasi/store', [NotifikasiBendaharaIuranController::class, 'store'])->name('bendahara.notifikasi.store');
+    Route::get('/bendahara/notifikasi/edit/{id}', [NotifikasiBendaharaIuranController::class, 'edit'])->name('bendahara.notifikasi.edit');
+    Route::put('/bendahara/notifikasi/update/{id}', [NotifikasiBendaharaIuranController::class, 'update'])->name('bendahara.notifikasi.update');
+    Route::delete('/bendahara/notifikasi/delete/{id}', [NotifikasiBendaharaIuranController::class, 'destroy'])->name('bendahara.notifikasi.delete');
+
     
 });
 

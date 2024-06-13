@@ -38,7 +38,7 @@ class PengumumanController extends Controller
         $request->validate([
             'judul_pengumuman' => 'required|string|max:255',
             'isi_pengumuman' => 'required|string',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'tanggal' => 'required|date'
         ]);
 
@@ -65,5 +65,11 @@ class PengumumanController extends Controller
         return redirect()->route('viewpengumuman')->with('success', 'Pengumuman Telah Ditambahkan');
         }
         
-        // Pengumuman::create($request->only(['judul_pengumuman', 'isi_pengumuman', 'gambar_pengumuman']));
+        public function destroy(int $id)
+        {
+            $pengumuman = Pengumuman::findOrFail($id);
+            $pengumuman->delete();
+
+        return redirect()->route('viewpengumuman')->with('success', 'penduduk telah didelete');
+        }
 }

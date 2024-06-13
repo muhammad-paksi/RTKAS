@@ -21,7 +21,7 @@ class NotifikasiBendaharaIuranController extends Controller
             'list' => '/ Data Notifikasi Iuran'
         ];
 
-        return view('admin.manage.notifIuran', compact('notifiuran', 'breadcrumb'));
+        return view('bendahara.notifikasi.notifIuran', compact('notifiuran', 'breadcrumb'));
     }
 
     /**
@@ -35,7 +35,7 @@ class NotifikasiBendaharaIuranController extends Controller
             'list' => '/ Insert Notifikasi Iuran'
         ];
 
-        return view('admin.manage.insertNotifikasi', compact('iuran','breadcrumb'));
+        return view('bendahara.notifikasi.insertNotifikasi', compact('iuran','breadcrumb'));
     }
 
     /**
@@ -53,7 +53,7 @@ class NotifikasiBendaharaIuranController extends Controller
 
     NotifikasiIuran::create($request->only(['judul', 'id_iuran', 'nominal', 'informasi', 'tanggal']));
 
-    return redirect()->route('viewNotif')->with('success', 'Notifikasi telah ditambahkan');
+    return redirect()->route('bendahara.notifikasi')->with('success', 'Notifikasi telah ditambahkan');
 }
 
 
@@ -82,7 +82,7 @@ class NotifikasiBendaharaIuranController extends Controller
             'list' => ' Edit Notifikasi'
         ];
 
-        return view('admin.manage.editNotif', compact('notif', 'breadcrumb', 'iuran'));
+        return view('bendahara.notifikasi.editNotif', compact('notif', 'breadcrumb', 'iuran'));
     }
 
     /**
@@ -111,7 +111,7 @@ class NotifikasiBendaharaIuranController extends Controller
         $notif->update($validatedData);
     
         // Redirect ke route 'viewkk' dengan pesan sukses
-        return redirect()->route('viewNotif')->with('success', 'Notifikasi Iuran telah diupdate');
+        return redirect()->route('bendahara.notifikasi')->with('success', 'Notifikasi Iuran telah diupdate');
     }
 
     /**

@@ -26,9 +26,9 @@
             display: flex;
         }
         .image-container {
-            background-image: url('{{ asset('storage/web-1718164149.png') }}');
-            background-size: cover;
-            background-position: center;
+            background-image: url('{{ asset('storage/web-1718252804.png') }}');
+            background-size: cover; /* Ini akan memastikan gambar menutupi seluruh kontainer */
+            background-position: center; /* Ini akan memastikan gambar berada di tengah */
             width: 50%;
             height: 100%;
         }

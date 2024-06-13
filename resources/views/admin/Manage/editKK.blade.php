@@ -11,7 +11,7 @@
         @method('PUT')
         <div class="form-group">
           <label for="nik_kk">NIK</label>
-          <input type="number" class="form-control" name="nik_kk" id="nik_kk" placeholder="Judul" value="{{ old('nik_kk', $kartukeluarga->nik_kk) }}" readonly>
+          <input type="number" class="form-control" name="nik_kk" id="nik_kk" placeholder="Judul" value="{{ old('nik_kk', $kartukeluarga->nik_kk) }}" >
         </div>
         <div class="form-group">
           <label for="nama_kepala">Nama Kepala Keluarga</label>

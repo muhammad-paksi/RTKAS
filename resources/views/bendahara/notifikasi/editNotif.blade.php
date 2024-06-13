@@ -1,4 +1,4 @@
-@extends('admin.layouts.template')
+@extends('bendahara.layouts.template')
 
 @section('content')
         <div class="row">
@@ -6,7 +6,7 @@
     <div class="card-body">
       <h4 class="card-title">Default form</h4>
       <p class="card-description"> Basic form layout </p>
-      <form class="forms-sample" action="{{route('updateNotifikasi', $notif->id_notifikasi)}}" method="POST">
+      <form class="forms-sample" action="{{route('bendahara.notifikasi.update', $notif->id_notifikasi)}}" method="POST">
         @csrf
         @method('PUT')
         <div class="form-group">
