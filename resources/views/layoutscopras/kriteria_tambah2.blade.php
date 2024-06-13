@@ -4,7 +4,7 @@
 <div class="content-wrapper">
     <div class="row">
         <div class="col-12 grid-margin">
-            <div class="card">
+            <div class="card border-left-blue">
                 <div class="card-body">
                     <h4 class="card-title">Tambah kriteria</h4>
                     <form action="tambah_kriteria2/simpan" method="POST" class="forms-sample">
@@ -22,7 +22,7 @@
                             <tbody>
                                 @for ($x = 0; $x < $jumlah; $x++)
                                     <tr>
-                                        <td>C{{ $x+1 }}</td>
+                                        <th>C{{ $x+1 }}</th>
                                         <td>
                                             <input type="text" name="nama_kriteria[]" class="form-control">
                                         </td>

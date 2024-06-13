@@ -5,7 +5,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-12 grid-margin">
-                <div class="card">
+                <div class="card border-left-blue">
                     <div class="card-body">
                         <h4 class="card-title">Sunting kriteria</h4>
                         <form action="sunting_kriteria/simpan" method="POST" class="forms-sample">

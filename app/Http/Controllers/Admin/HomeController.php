@@ -14,7 +14,7 @@ class HomeController extends Controller
             'list' => 'Dashboard'
         ];
         $activemenu = 'dashboard';
-
+        
         return view('admin.dashboard', ['breadcrumb'=>$breadcrumb, 'activemenu' => $activemenu]);
     }
 }

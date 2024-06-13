@@ -4,7 +4,7 @@
 <div class="content-wrapper">
     <div class="row">
         <div class="col-12 grid-margin">
-            <div class="card">
+            <div class="card border-left-blue">
                 <div class="card-body">
                     <h4 class="card-title">Tambah jumlah alternatif</h4>
                     <!-- <p class="card-description">Masukkan jumlah kriteria baru </p> -->
@@ -24,7 +24,7 @@
                             <tbody>
                                 @for ($x = 0; $x < $jumlah; $x++)
                                     <tr>
-                                        <td>A{{ $x+1 }}</td>
+                                        <th>A{{ $x+1 }}</th>
                                         <td>
                                             <input type="text" name="nama_alternatif[]" class="form-control">
                                         </td>
