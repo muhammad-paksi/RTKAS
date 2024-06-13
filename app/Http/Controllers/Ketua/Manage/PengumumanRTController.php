@@ -17,7 +17,7 @@ class PengumumanRTController extends Controller
 
         $breadcrumb = (object)[
             'judul' => 'Admin ',
-            'list' => '/ Pengumuman'
+            'list' => 'Pengumuman'
         ];
 
         return view('admin.manage.pengumuman', compact('pengumuman', 'breadcrumb'));

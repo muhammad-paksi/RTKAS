@@ -11,7 +11,7 @@ class BendaharaController extends Controller
     {
         $breadcrumb = (object)[
             'judul' => 'Bendahara ',
-            'list' => '/ Dashboard'
+            'list' => 'Dashboard'
         ];
 
         return view('bendahara.dashboard', compact('breadcrumb'));

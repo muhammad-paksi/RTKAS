@@ -16,7 +16,7 @@ class UserController extends Controller
         $kk = User::with('penduduk')->get();
         $breadcrumb = (object)[
             'judul' => 'Admin ',
-            'list' => '/ Data User'
+            'list' => 'Data User'
         ];
 
         return view('admin.manage.user', compact('kk', 'breadcrumb'));

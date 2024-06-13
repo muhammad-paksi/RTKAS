@@ -18,7 +18,7 @@ class KasController extends Controller
 
         $breadcrumb = (object)[
             'judul' => 'Admin ',
-            'list' => '/ Data Kas'
+            'list' => 'Data Kas'
         ];
 
         return view('bendahara.kas.viewKas', compact('kk', 'breadcrumb'));

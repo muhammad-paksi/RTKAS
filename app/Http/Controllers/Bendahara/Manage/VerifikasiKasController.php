@@ -15,7 +15,7 @@ class VerifikasiKasController extends Controller
     {
         $breadcrumb = (object)[
             'judul' => 'Bendahara ',
-            'list' => '/ Verifikasi Kas'
+            'list' => 'Verifikasi Kas'
             ];
         $list = BayarIuran::with('notif', 'warga')->where('status', 'belum')->get();      
         $listsudah = BayarIuran::with('notif', 'warga')->where('status', 'selesai')->get();

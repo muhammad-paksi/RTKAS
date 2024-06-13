@@ -17,7 +17,7 @@ class IuranController extends Controller
 
         $breadcrumb = (object)[
             'judul' => 'Admin ',
-            'list' => '/ Data Iuran'
+            'list' => 'Data Iuran'
         ];
 
         return view('admin.manage.iuran', compact('iuran', 'breadcrumb'));

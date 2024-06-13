@@ -18,7 +18,7 @@ class PendudukController extends Controller
 
         $breadcrumb = (object)[
             'judul' => 'Admin ',
-            'list' => '/ Data Warga'
+            'list' => 'Data Warga'
         ];
 
         return view('admin.manage.penduduk', compact('warga', 'breadcrumb'));

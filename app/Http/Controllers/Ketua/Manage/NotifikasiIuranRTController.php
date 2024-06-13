@@ -18,7 +18,7 @@ class NotifikasiIuranRTController extends Controller
 
         $breadcrumb = (object)[
             'judul' => 'Admin ',
-            'list' => '/ Data Notifikasi Iuran'
+            'list' => 'Data Notifikasi Iuran'
         ];
 
         return view('admin.manage.notifIuran', compact('notifiuran', 'breadcrumb'));

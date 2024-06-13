@@ -17,7 +17,7 @@ class IuranRTController extends Controller
 
         $breadcrumb = (object)[
             'judul' => 'Ketua RT ',
-            'list' => '/ Data Iuran'
+            'list' => 'Data Iuran'
         ];
 
         return view('ketua.manage.iuran.iuran', compact('iuran', 'breadcrumb'));

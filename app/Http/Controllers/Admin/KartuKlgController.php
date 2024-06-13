@@ -18,7 +18,7 @@ class KartuKlgController extends Controller
 
         $breadcrumb = (object)[
             'judul' => 'Admin ',
-            'list' => '/ Kartu Keluarga'
+            'list' => 'Kartu Keluarga'
         ];
 
         return view('admin.manage.kk', compact('kk', 'breadcrumb'));

@@ -18,7 +18,7 @@ class KartuKlgRTController extends Controller
 
         $breadcrumb = (object)[
             'judul' => 'Ketua RT ',
-            'list' => '/ Kartu Keluarga'
+            'list' => 'Kartu Keluarga'
         ];
 
         return view('ketua.manage.kk.kk', compact('kk', 'breadcrumb'));

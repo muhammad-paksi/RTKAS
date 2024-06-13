@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         $breadcrumb = (object)[
             'judul' => 'Admin ',
-            'list' => '/ Dashboard'
+            'list' => 'Dashboard'
         ];
         $activemenu = 'dashboard';
 

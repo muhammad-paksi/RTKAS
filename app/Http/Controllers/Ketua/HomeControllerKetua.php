@@ -11,7 +11,7 @@ class HomeControllerKetua extends Controller
     {
         $breadcrumb = (object)[
             'judul' => 'Ketua RT ',
-            'list' => '/ Dashboard'
+            'list' => 'Dashboard'
         ];
 
         return view('ketua.dashboard', compact('breadcrumb'));

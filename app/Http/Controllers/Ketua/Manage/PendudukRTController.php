@@ -18,7 +18,7 @@ class PendudukRTController extends Controller
 
         $breadcrumb = (object)[
             'judul' => 'Ketua RT ',
-            'list' => '/ Data Warga'
+            'list' => 'Data Warga'
         ];
 
         return view('ketua.manage.warga.penduduk', compact('warga', 'breadcrumb'));
