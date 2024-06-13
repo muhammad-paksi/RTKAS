@@ -33,14 +33,13 @@
         position: relative;
         z-index: 2;
     }
-    .table th, .table td {
+    /* .table th, .table td {
         color: white; /* Warna teks putih */
-    }
+    } */
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
-  <div class="content">
+  <div>
     <header>
       @include('warga.layouts.navbar')
     </header>

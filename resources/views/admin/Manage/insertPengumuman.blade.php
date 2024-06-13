@@ -6,7 +6,7 @@
     <div class="card-body">
       <h4 class="card-title">Default form</h4>
       <p class="card-description"> Basic form layout </p>
-      <form class="forms-sample" action="{{route('storepengumuman')}}" method="POST">
+      <form class="forms-sample" action="{{route('storepengumuman')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
           <label for="judul_pengumuman">Judul Pengumuman</label>
@@ -17,9 +17,13 @@
           <input type="text" class="form-control" name="isi_pengumuman" id="isi_pengumuman" placeholder="Teks">
         </div>
         <div class="form-group">
-          <label for="gambar_pengumuman">Gambar Pengumuman</label>
-          <input type="file" name="gambar_pengumuman" class="form-control" id="gambar_pengumuman">
-      </div>
+          <label for="gambar">Gambar Pengumuman</label>
+          <input type="file" name="gambar" class="form-control" id="gambar">
+          </div>
+            <div class="form-group">
+              <label for="tanggal">Isi Pengumuman</label>
+              <input type="date" class="form-control" name="tanggal" id="tanggal" placeholder="tanggal">
+            </div>
         <button type="submit" class="btn btn-primary me-2">Submit</button>
         <button class="btn btn-light">Cancel</button>
       </form>

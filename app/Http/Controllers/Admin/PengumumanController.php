@@ -38,12 +38,13 @@ class PengumumanController extends Controller
         $request->validate([
             'judul_pengumuman' => 'required|string|max:255',
             'isi_pengumuman' => 'required|string',
-            'gambar_pengumuman' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'tanggal' => 'required|date'
         ]);
 
 
-        if ($request->hasFile('gambar_pengumuman')) {
-            $file = $request->file('gambar_pengumuman');
+        if ($request->hasFile('gambar')) {
+            $file = $request->file('gambar');
             $path = $file->store('public/pengumuman');
             $filename = basename($path);
 
@@ -55,13 +56,14 @@ class PengumumanController extends Controller
         Pengumuman::create([
             'judul_pengumuman' => $request->judul_pengumuman,
             'isi_pengumuman' => $request->isi_pengumuman,
-            'gambar_pengumuman' => $filename,
+            'gambar' => $filename,
+            'tanggal' => $request->tanggal,
         ]);
 
     
-        // Pengumuman::create($request->only(['judul_pengumuman', 'isi_pengumuman', 'gambar_pengumuman']));
-    
+        
         return redirect()->route('viewpengumuman')->with('success', 'Pengumuman Telah Ditambahkan');
-    }
-    
+        }
+        
+        // Pengumuman::create($request->only(['judul_pengumuman', 'isi_pengumuman', 'gambar_pengumuman']));
 }

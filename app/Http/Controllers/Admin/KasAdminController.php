@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Bendahara\Manage;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Kas;
 use App\Models\BayarIuran;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class KasController extends Controller
+class KasAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,7 +21,7 @@ class KasController extends Controller
             'list' => 'Data Kas'
         ];
 
-        return view('bendahara.kas.viewKas', compact('kk', 'breadcrumb'));
+        return view('admin.kas', compact('kk', 'breadcrumb'));
     }
 
     public function totalNominal()
@@ -30,12 +30,12 @@ class KasController extends Controller
         $kas = BayarIuran::where('status', 'selesai')->sum('nominal');
         $history = BayarIuran::orderBy('tanggal_bayar', 'desc')->get();
         $breadcrumb = (object)[
-            'judul' => 'Bendahara ',
+            'judul' => 'Admin ',
             'list' => '/ Data Kas'
         ];
 
         // Mengembalikan view dengan data total nominal
-        return view('bendahara.manage.kas', compact('kas', 'history', 'breadcrumb'));
+        return view('admin.manage.kas', compact('kas', 'history', 'breadcrumb'));
     }
 
     /**

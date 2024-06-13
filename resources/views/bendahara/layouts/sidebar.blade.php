@@ -40,7 +40,7 @@
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{ route('viewIuran') }}">Data iuran</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('bendahara.iuran') }}">Data iuran</a></li>
               </ul>
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{ route('viewNotif') }}">Notifikasi Kas</a></li>

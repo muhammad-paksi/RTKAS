@@ -11,4 +11,14 @@ class HomeWargaController extends Controller
     {
         return view('warga.dashboard');
     }
+
+    public function kontak()
+    {
+        return view('warga.kontak');
+    }
+
+    public function layanan()
+    {
+        return view('warga.layanan');
+    }
 }

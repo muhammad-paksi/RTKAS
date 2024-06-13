@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kk', function (Blueprint $table) {
-            $table->id('nik_kk');
-            $table->string('nama_kepala');
-            $table->text('alamat_kk');
-            $table->timestamps();
-           
-
+        Schema::table('tables', function (Blueprint $table) {
+            //
         });
     }
 
@@ -26,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kk');
+        Schema::table('tables', function (Blueprint $table) {
+            //
+        });
     }
 };

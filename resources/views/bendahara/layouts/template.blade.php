@@ -33,8 +33,8 @@
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
       
-      <!-- Sidebar -->
-      @include('bendahara.layouts.sidebar')
+        <!-- Sidebar -->
+        @include('bendahara.layouts.sidebar')
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">

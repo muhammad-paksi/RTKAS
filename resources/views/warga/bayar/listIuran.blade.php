@@ -1,14 +1,6 @@
 @extends('warga.layouts.template')
 
 @section('content')
-<style>
-    .title-white {
-        color: white; /* Warna teks putih */
-    }
-    .table th, .table td {
-        color: white; /* Warna teks putih untuk tabel */
-    }
-</style>
 <div class="container flex">
     <div class="a">
         <h3 class="title-white">Notifikasi Belum Dibayar</h3>

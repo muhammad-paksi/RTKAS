@@ -19,6 +19,7 @@
                       <th>Judul Pengumuman</th>
                       <th>Isi Pengumuman</th>
                       <th>Tanggal</th>
+                      <th>Gambar</th>
                       <th>menu</th>
                     </tr>
                   </thead>
@@ -29,11 +30,11 @@
                       <td>{{ $loop->iteration }}</td>
                       <td>{{$rs->judul_pengumuman}}</td>
                       <td>{{$rs->isi_pengumuman}}</td>
-                      <td>{{$rs->created_at}}</td>
+                      <td>{{$rs->tanggal}}</td>
                       <td>
                         @if($rs->gambar_pengumuman)
                         <p>Gambar</p>
-                        <img src="{{ asset('storage/gambar/' . $rs->gambar_pengumuman) }}" alt="Gambar Pengumuman" style="max-width: 50%;">
+                        <img src="{{ asset('storage/pengumuman/' . $rs->gambar) }}" alt="Gambar Pengumuman" style="max-width: 50%;">
                         @endif
                       </td>
                       <td><label class="badge badge-danger">edit</label> <label class="badge badge-danger">delete</label></td>

@@ -48,8 +48,6 @@ Route::get('/kontak', [LandingPageController::class, 'kontak'])->name('kontak');
     use App\Http\Controllers\CoprasController;
     use App\Http\Controllers\Admin\NotifikasiIuranController;
     use App\Http\Controllers\Admin\UserController;
-    use App\Http\Controllers\Admin\KasAdminController;
-
     
        
 
@@ -73,9 +71,7 @@ Route::get('/viewpenduduk', [PendudukController::class, 'index'])->name('viewpen
 Route::get('/insertpenduduk', [PendudukController::class, 'create'])->name('insertpenduduk')->middleware('akunAkses:admin');
 Route::post('/storependuduk', [PendudukController::class, 'store'])->name('storependuduk')->middleware('akunAkses:admin');
 Route::get('/editwarga/{nik}', [PendudukController::class, 'edit'])->name('editwarga')->middleware('akunAkses:admin');
-Route::put('/updatewarga/{nik}', [PendudukController::class, 'update'])->name('updatewarga')->middleware('akunAkses:admin');
-Route::delete('/deletewarga/{nik}', [PendudukController::class, 'destroy'])->name('deletewarga')->middleware('akunAkses:admin');
-
+Route::put('/updatewarga/{nik}', [PendudukController::class, 'update'])->name('updatewarga')->middleware('akunAkses:admin'); 
 
 Route::get('/viewIuran', [IuranController::class, 'index'])->name('viewIuran')->middleware('akunAkses:admin');
 Route::get('/insertIuran', [IuranController::class, 'create'])->name('insertIuran')->middleware('akunAkses:admin');
@@ -109,15 +105,11 @@ Route::POST('/copras/hapus_kriteria', [CoprasController::class, 'hapus_krit'])->
 Route::get('/copras/tambah_alt', [CoprasController::class, 'tambah_jumlah_alt'])->middleware('akunAkses:admin');
 Route::POST('/copras/tambah_alt2', [CoprasController::class, 'tambah_alt'])->middleware('akunAkses:admin');
 Route::POST('/copras/tambah_alt2/simpan', [CoprasController::class, 'tambah_alt_simpan'])->middleware('akunAkses:admin');
-Route::get('/copras/sunting_alt', [CoprasController::class, 'sunting_alt']);
-Route::POST('/copras/sunting_alt/simpan', [CoprasController::class, 'simpan_sunting_alt']);
 Route::POST('/copras/hapus_alternatif', [CoprasController::class, 'hapus_alt'])->middleware('akunAkses:admin');
 
 //Route untuk edit dan simpan matriks penilaian SPK
 Route::get('/copras/sunting_penilaian', [CoprasController::class, 'sunting_penilaian'])->middleware('akunAkses:admin');
 Route::POST('/copras/sunting_penilaian/simpan', [CoprasController::class, 'simpan_sunting_penilaian'])->middleware('akunAkses:admin');
-
-Route::get('/admin/kas', [KasAdminController::class, 'totalNominal'])->name('admin.kas')->middleware('akunAkses:admin');
 
 
 Route::get('/logout',[AuthController::class, 'logout'])->name('logout');

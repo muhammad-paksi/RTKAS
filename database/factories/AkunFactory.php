@@ -27,9 +27,9 @@ class AkunFactory extends Factory
         $nik = !empty($warga) ? fake()->randomElement($warga) : null;
         
         return [
-            'username' => 'ravi',
-            'password' => Hash::make('ravi'),
-            'level' => 'admin',
+            'username' => fake()->userName(),
+            'password' => Hash::make('123'),
+            'level' => 'warga',
             'nik' => $nik,
         ];
     }

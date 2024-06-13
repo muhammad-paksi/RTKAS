@@ -13,5 +13,15 @@ class LandingPageController extends Controller
         Auth::logout();
         return view('dashboard');
     }
+
+    public function layanan()
+    {
+        return view('layanan');
+    }
+
+    public function kontak()
+    {
+        return view('kontak');
+    }
 }
  

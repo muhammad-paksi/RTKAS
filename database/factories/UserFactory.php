@@ -23,6 +23,15 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $warga = Penduduk::all()->pluck('nik')->toArray();
+        
+        
+        if (!is_array($warga)) {
+            throw new InvalidArgumentException('Penduduk::all()->pluck("nik") must return an array.');
+        }
+
+        $nik = !empty($warga) ? fake()->randomElement($warga) : null;
+        
         return [
             'username' => fake()->name(),
             'password' => static::$password ??= Hash::make('password'),

@@ -21,8 +21,8 @@
             <div>
                 <a class="navbar-brand brand-logo" href="#">
                     <!-- Ganti dengan URL gambar logo Anda -->
-                    <img src="{{ asset('storage/web-1717986389.jpeg') }}" alt="Logo">
-                    <span>SI KAS</span>
+                    {{-- <img src="{{ asset('storage/web-1717986389.jpeg') }}" alt="Logo"> --}}
+                    <span style="font-family:'Montserrat black'">RT KAS</span>
                 </a>
                 <a class="navbar-brand brand-logo-mini" href="#">
                     <!-- Ganti dengan URL gambar logo Anda -->

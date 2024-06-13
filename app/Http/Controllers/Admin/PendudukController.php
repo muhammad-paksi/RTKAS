@@ -114,8 +114,11 @@ class PendudukController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Penduduk $penduduk)
+    public function destroy($nik)
     {
-        //
+        $penduduk = Penduduk::findOrFail($nik);
+        $penduduk->delete();
+
+        return redirect()->route('viewpenduduk')->with('success', 'penduduk telah didelete');
     }
 }

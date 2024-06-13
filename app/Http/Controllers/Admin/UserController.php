@@ -27,7 +27,13 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $kk = User::with('penduduk')->get();
+        $breadcrumb = (object)[
+            'judul' => 'Admin / Data User',
+            'list' => 'Insert User'
+        ];
+
+        return view('admin.manage.adduser', compact('kk', 'breadcrumb'));
     }
 
     /**

@@ -8,20 +8,20 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="{{route('warga/dashboard')}}">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{route('warga/iuran')}}">Bayar Kas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Dana Darurat</a>
+          <a class="nav-link" href="{{route('warga.pengumuman')}}">Pengumuman</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pengumuman</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('warga.keluargaku')}}">Keluargaku</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('warga.keluargaku')}}">Keluargaku</a>
+          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('warga/kontak')}}">Kontak Kami</a>
+            </li>
         <li class="nav-item">
           <a class="nav-link" href="{{route('logout')}}">Logout</a>
         </li>

@@ -19,7 +19,7 @@
                     <span class="menu-title">Dashboard</span>
                 </a>
             </li>
-            <li class="nav-item nav-category">Informasi</li>
+            {{-- <li class="nav-item nav-category">Informasi</li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                     <i class="menu-icon mdi material-symbols-outlined">campaign</i>
@@ -37,7 +37,7 @@
                     <i class="menu-icon mdi material-symbols-outlined">account_balance</i>
                     <span class="menu-title">Iuran</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item nav-category">Kelola</li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#warga" aria-expanded="false" aria-controls="charts">
@@ -71,7 +71,7 @@
                         <li class="nav-item"> <a class="nav-link" href="{{ route('viewNotif') }}">Notifikasi Kas</a></li>
                     </ul>
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="{{ asset('staradmin/pages/charts/chartjs.html') }}">Data Kas</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('admin.kas') }}">Data Kas</a></li>
                     </ul>
                 </div>
             </li>
@@ -84,7 +84,7 @@
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="{{ route('viewCopras') }}" aria-expanded="false" aria-controls="tables">
                     <i class="menu-icon mdi material-symbols-outlined">experiment</i>
-                    <span class="menu-title">Sistem Pendukung Keputusan</span>
+                    <span class="menu-title">SPK</span>
                 </a>
             </li>
         </ul>

@@ -1,4 +1,4 @@
-@extends('admin.layouts.template')
+@extends('bendahara.layouts.template')
 
 @section('content')
       <div class="row">
@@ -7,8 +7,8 @@
             <div class="card-body">
               <h4 class="card-title">Table</h4>
               <div class="card-description">
-              <a class="btn btn-rounded btn-primary float-end" href="{{url('/insertpenduduk')}}">Tambah Data</a>
-              <p > Data Penduduk
+              <a class="btn btn-rounded btn-primary float-end" href="{{ route('bendahara.iuran.insert')}}">Tambah Data</a>
+              <p > Data Iuran
             </p>
               </div>
               <div class="table-responsive">
@@ -16,32 +16,27 @@
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>NIK</th>
-                      <th>Nama Lengkap</th>
-                      <th>Tanggal Lahir</th>
-                      <th>NIK Kartu Keluarga</th>
-                      <th>Alamat</th>
-                      <th>Menu</th>
+                      <th>Nama Iuran</th>
+                      <th>Tanggal</th>
+                      <th>menu</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @if($warga->count() > 0)
-                    @foreach($warga as $rs)
+                    @if($iuran->count() > 0)
+                    @foreach($iuran as $rs)
                     <tr>
                       <td>{{$loop->iteration }}</td>
-                      <td>{{$rs->nik}}</td>
-                      <td>{{$rs->nama_lengkap}}</td>
-                      <td>{{$rs->tanggal_lahir}}</td>
-                      <td>{{$rs->nik_kk}}</td>
-                      <td>{{$rs->kk->alamat_kk ?? 'Alamat not found'}}</td>
-                      <td><label class="badge badge-danger"><a btn btn-rounded btn-primary href="{{route('editwarga', $rs->nik)}}" type="button">edit</a></label> 
+                      <td>{{$rs->nama_iuran}}</td>
+                      <td>{{$rs->tanggal}}</td>
+                      <td><label class="badge badge-danger"><a btn btn-rounded btn-primary href="{{route('bendahara.iuran.edit', $rs->id_iuran)}}" type="button">edit</a></label> 
                         <label for="badge badge-danger">
-                          <form action="{{route('deletewarga', $rs->nik)}}" method="POST" onsubmit="return confirm('Delete?')">
+                          <form action="{{route('bendahara.iuran.delete', $rs->id_iuran)}}" method="POST" onsubmit="return confirm('Delete?')">
                             @csrf
                             @method('DELETE')
                             <button>Delete</button>
                           </form>
-                        </label>                    </td>
+                        </label>
+                      </td>
                     </tr>
                     @endforeach
                     @else
